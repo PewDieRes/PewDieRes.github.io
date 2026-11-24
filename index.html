@@ -92,16 +92,7 @@
           <li>Resolved 50+ production bugs (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
         </ul>
 
-        <div class="client">
-          <h4>Client project · Multi-tenant digital asset platform (sports media)</h4>
-          <p class="stack" aria-label="Stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS</p>
-          <ul class="bullets">
-            <li>Designed and built a generic FFmpeg transcoding service for video, image and arbitrary FFmpeg-argument jobs, processing files ingested across all tenants.</li>
-            <li>Architected size-based routing on Amazon SQS: jobs go to Lambda functions sized by file size, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
-            <li>Built content-hash file deduplication for S3 uploads, plus a backfill job that linked duplicates to their originals and removed ~12 TB of duplicate data (about 20% of total storage).</li>
-            <li>Prototyped an in-house ExifTool replacement for a third-party metadata SaaS: 100% parity on critical fields across 8 media formats and up to 76x faster extraction (~29 s to 381 ms).</li>
-          </ul>
-        </div>
+        <p class="client-ref">Main client project: <strong>The Vault</strong>, a multi-tenant digital asset platform. <a href="#p-vault">See it in Projects</a></p>
       </article>
 
       <article class="role">
@@ -122,6 +113,59 @@
 
     <section class="wrap section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
+
+      <article class="project featured" aria-labelledby="p-vault-title" id="p-vault">
+        <div class="project-body">
+          <p class="kicker">Client project at Coditas · in production</p>
+          <h3 id="p-vault-title">The Vault by TGI Sport: Multi-Tenant Digital Asset Platform</h3>
+          <p class="stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Sports media and advertising teams across multiple leagues share one platform for their media. Every ingested file has to be processed, from small images to very large videos, with strict tenant isolation.</dd>
+            <dt>Approach</dt>
+            <dd>I designed and built a generic FFmpeg transcoding service for video, image and arbitrary FFmpeg-argument jobs, fed through Amazon SQS, plus REST APIs for async file processing and bulk multipart S3 uploads.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Size-based routing: jobs go to Lambda functions with different memory and timeout sizes by file size, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
+                <li>Content-hash deduplication: a duplicate upload references the original S3 object through an <code>originalFileId</code> but still behaves as a distinct file in the app.</li>
+              </ul>
+            </dd>
+            <dt>Impact</dt>
+            <dd>
+              <ul class="bullets">
+                <li>A backfill job hashed existing files and removed ~12 TB of duplicate data, about 20% of storage across all tenants.</li>
+                <li>Prototyped an in-house ExifTool replacement for a third-party metadata SaaS: 100% parity on critical fields across 8 media formats and up to 76x faster extraction (~29 s to 381 ms).</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links-note">Client code is private.</p>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 320 330" role="img" aria-labelledby="d0-title d0-desc">
+            <title id="d0-title">The Vault media pipeline architecture</title>
+            <desc id="d0-desc">A multi-tenant NestJS API handles multipart uploads and content-hash deduplication, then enqueues FFmpeg jobs on Amazon SQS. Jobs are routed by file size to a small Lambda, a larger Lambda, or an ECS task on EC2 for very large files. Outputs and deduplicated originals are stored in Amazon S3.</desc>
+            <defs>
+              <marker id="arr0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
+            </defs>
+            <g class="d-node"><rect x="20" y="8" width="280" height="48" rx="8"/><text x="160" y="29">NestJS API (multi-tenant)</text><text x="160" y="46" class="d-sub">multipart uploads · content-hash dedup</text></g>
+            <line x1="160" y1="58" x2="160" y2="88" class="d-edge" marker-end="url(#arr0)"/>
+            <text x="170" y="77" class="d-label" text-anchor="start">enqueue job</text>
+            <g class="d-node d-accent"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Amazon SQS</text><text x="160" y="128" class="d-sub">FFmpeg jobs · routed by file size</text></g>
+            <line x1="130" y1="140" x2="64" y2="178" class="d-edge" marker-end="url(#arr0)"/>
+            <line x1="160" y1="140" x2="160" y2="178" class="d-edge" marker-end="url(#arr0)"/>
+            <line x1="190" y1="140" x2="256" y2="178" class="d-edge" marker-end="url(#arr0)"/>
+            <g class="d-node"><rect x="20" y="180" width="88" height="56" rx="8"/><text x="64" y="203">Lambda</text><text x="64" y="221" class="d-sub">small files</text></g>
+            <g class="d-node"><rect x="116" y="180" width="88" height="56" rx="8"/><text x="160" y="203">Lambda</text><text x="160" y="221" class="d-sub">more memory</text></g>
+            <g class="d-node d-accent"><rect x="212" y="180" width="88" height="56" rx="8"/><text x="256" y="203">ECS on EC2</text><text x="256" y="221" class="d-sub">very large files</text></g>
+            <line x1="64" y1="238" x2="64" y2="268" class="d-edge" marker-end="url(#arr0)"/>
+            <line x1="160" y1="238" x2="160" y2="268" class="d-edge" marker-end="url(#arr0)"/>
+            <line x1="256" y1="238" x2="256" y2="268" class="d-edge" marker-end="url(#arr0)"/>
+            <g class="d-node"><rect x="20" y="270" width="280" height="48" rx="8"/><text x="160" y="291">Amazon S3</text><text x="160" y="308" class="d-sub">transcoded outputs · deduped originals</text></g>
+          </svg>
+          <figcaption>Ingest and transcoding pipeline</figcaption>
+        </figure>
+      </article>
 
       <article class="project featured" aria-labelledby="p-ttt">
         <div class="project-body">
@@ -236,6 +280,26 @@
             <a href="https://digiaccel-todo-mihir.netlify.app" rel="noopener">Live demo<span class="sr-only"> (Do It)</span></a>
             <a href="https://github.com/PewDieRes/digiaccel-todo" rel="noopener">Source<span class="sr-only"> (Do It)</span></a>
           </p>
+        </article>
+
+        <article class="project" aria-labelledby="p-letittap">
+          <p class="kicker">In development</p>
+          <h3 id="p-letittap">LetItTap: Android Phone Agent</h3>
+          <p class="stack">Kotlin · Android Accessibility Service · Claude API · Gemini API · LLM tool calling</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Everyday phone jobs, like filling a form, setting an alarm or messaging someone, take a dozen taps in the same few apps.</dd>
+            <dt>Approach</dt>
+            <dd>An Android app with a floating bubble: say or type a task, and an LLM agent operates the phone, opening apps, tapping and typing while you watch.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Screen as text, not screenshots: the accessibility tree becomes a numbered list of elements, and the model answers with one tool call per turn (tap, type, scroll, open app, done), capped at 20 steps.</li>
+                <li>Guardrails in the agent loop: it refuses to pay, delete or enter passwords, one tap on the bubble stops it, and there is no backend, so the phone talks to Claude or Gemini directly.</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links"><a href="https://letittap.com/" rel="noopener">Website<span class="sr-only"> (LetItTap)</span></a></p>
         </article>
 
         <article class="project" aria-labelledby="p-mail">
