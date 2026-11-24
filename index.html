@@ -56,16 +56,23 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="topbar-resume" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Resume<span aria-hidden="true"> ↓</span></a>
+      <a class="topbar-resume" href="resume.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
     </nav>
   </header>
 
   <main id="main">
     <!-- Hero -->
     <section class="shell hero" id="top" aria-labelledby="hero-name">
-      <p class="hero-eyebrow">Backend engineer · Pune, India · open to backend and full&#8209;stack roles</p>
+      <p class="hero-eyebrow"><span class="status-dot" aria-hidden="true"></span>Open to backend and full&#8209;stack roles</p>
       <h1 id="hero-name">Mihir Vaze</h1>
-      <p class="hero-stack">Node.js · TypeScript · NestJS · AWS</p>
+      <p class="hero-stack">Backend Engineer · Node.js, TypeScript, NestJS, AWS</p>
+
+      <dl class="facts-row">
+        <div><dt>Experience</dt><dd>1.5+ years</dd></div>
+        <div><dt>Current role</dt><dd>Software Engineer, Coditas LLP</dd></div>
+        <div><dt>Education</dt><dd>B.E. Computer Engineering · CGPA 8.4</dd></div>
+        <div><dt>Location</dt><dd>Pune, India</dd></div>
+      </dl>
 
       <div class="hero-grid">
         <div class="hero-copy">
@@ -73,8 +80,8 @@
           <ul class="hero-actions">
             <li><a class="button button-solid" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Download resume <span aria-hidden="true">↓</span></a></li>
             <li><a class="button" href="mailto:vazemihir2001@gmail.com">Email me</a></li>
-            <li class="hero-out"><a href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
-            <li class="hero-out"><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
+            <li class="hero-out"><a href="https://github.com/PewDieRes" target="_blank" rel="me noopener">GitHub</a></li>
+            <li class="hero-out"><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" target="_blank" rel="me noopener">LinkedIn</a></li>
           </ul>
         </div>
 
@@ -123,14 +130,14 @@
         </div>
         <div class="job-what">
           <h3>Software Engineer <span>Coditas LLP</span></h3>
-          <p class="job-note">Promoted from Associate Software Engineer, Oct 2026</p>
+          <p class="job-promo"><span aria-hidden="true">↑</span> Promoted from Associate Software Engineer, Oct 2026</p>
           <ul class="ticks">
             <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
-            <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by over 35%.</li>
-            <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by roughly 30%.</li>
-            <li>Resolved 50+ production bugs (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
+            <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by <strong>over 35%</strong>.</li>
+            <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by <strong>roughly 30%</strong>.</li>
+            <li>Resolved <strong>50+ production bugs</strong> (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
           </ul>
-          <p class="job-link">Main client project: <a href="#p-vault">The Vault, a multi-tenant digital asset platform</a></p>
+          <p class="job-link">Main client project: <a href="#p-vault">The Vault, a multi-tenant digital asset platform</a> (FFmpeg pipeline, ~12 TB of duplicates removed)</p>
         </div>
       </article>
 
@@ -299,6 +306,7 @@
           <header class="case-head">
             <p class="case-kicker">Personal · open source</p>
             <h3 id="p-ttt">LLM Tic-Tac-Toe Tournament</h3>
+            <p class="case-sub">Models from five LLM providers play a live knockout, streamed over WebSockets</p>
             <p class="case-stack">TypeScript · Node.js · Express.js · WebSockets · Vercel AI SDK · Zod</p>
           </header>
           <dl class="case-facts">
@@ -314,7 +322,7 @@
               </ul>
             </dd>
           </dl>
-          <p class="case-links"><a href="https://github.com/PewDieRes/GEN-AI-PROJECTS/tree/MIHIRS-AI-ASSISTANT/LLM-TIC-TAC-TOE" rel="noopener">Source on GitHub<span class="sr-only"> (LLM Tic-Tac-Toe Tournament)</span></a></p>
+          <p class="case-links"><a href="https://github.com/PewDieRes/GEN-AI-PROJECTS/tree/MIHIRS-AI-ASSISTANT/LLM-TIC-TAC-TOE" target="_blank" rel="noopener">Source on GitHub<span class="sr-only"> (LLM Tic-Tac-Toe Tournament)</span></a></p>
         </div>
         <figure class="case-diagram">
           <svg class="dg" viewBox="0 0 320 432" role="img" aria-labelledby="d1-title d1-desc">
@@ -352,6 +360,7 @@
           <header class="case-head">
             <p class="case-kicker">Personal</p>
             <h3 id="p-electro">Electro: Multi-Tenant Utility Management</h3>
+            <p class="case-sub">Billing and telemetry backend with tenant isolation and role-based access</p>
             <p class="case-stack">Node.js · Express.js · PostgreSQL · Sequelize · JWT</p>
           </header>
           <dl class="case-facts">
@@ -367,6 +376,7 @@
               </ul>
             </dd>
           </dl>
+          <p class="case-note">Code not public.</p>
         </div>
         <figure class="case-diagram">
           <svg class="dg" viewBox="0 0 320 396" role="img" aria-labelledby="d2-title d2-desc">
@@ -405,8 +415,8 @@
             <li>No login: a guard requires an anonymous per-browser client ID and every query is scoped to it.</li>
           </ul>
           <p class="case-links">
-            <a href="https://digiaccel-todo-mihir.netlify.app" rel="noopener">Live demo<span class="sr-only"> (Do It)</span></a>
-            <a href="https://github.com/PewDieRes/digiaccel-todo" rel="noopener">Source<span class="sr-only"> (Do It)</span></a>
+            <a href="https://digiaccel-todo-mihir.netlify.app" target="_blank" rel="noopener">Live demo<span class="sr-only"> (Do It)</span></a>
+            <a href="https://github.com/PewDieRes/digiaccel-todo" target="_blank" rel="noopener">Source<span class="sr-only"> (Do It)</span></a>
           </p>
         </article>
 
@@ -419,7 +429,7 @@
             <li>The screen goes to the model as text, not screenshots: a numbered list of UI elements, answered with one tool call per turn and capped at 20 steps.</li>
             <li>It refuses to pay, delete or enter passwords, one tap stops it, and there is no backend: the phone talks to Claude or Gemini directly.</li>
           </ul>
-          <p class="case-links"><a href="https://letittap.com/" rel="noopener">Website<span class="sr-only"> (LetItTap)</span></a></p>
+          <p class="case-links"><a href="https://letittap.com/" target="_blank" rel="noopener">Website<span class="sr-only"> (LetItTap)</span></a></p>
         </article>
 
         <article class="mini" aria-labelledby="p-mail">
@@ -431,7 +441,7 @@
             <li>Deterministic SPF, DKIM and DMARC checks run before the model, so phishing detection doesn't depend on model confidence.</li>
             <li>Low-confidence emails get an Unsure label instead of a guess, and the tool only adds labels: it never archives, deletes or sends.</li>
           </ul>
-          <p class="case-links"><a href="https://github.com/PewDieRes/laya-mail-triage" rel="noopener">Source<span class="sr-only"> (AI Email Classifier)</span></a></p>
+          <p class="case-links"><a href="https://github.com/PewDieRes/laya-mail-triage" target="_blank" rel="noopener">Source<span class="sr-only"> (AI Email Classifier)</span></a></p>
         </article>
 
         <article class="mini" aria-labelledby="p-hud">
@@ -443,7 +453,7 @@
             <li>A service worker refreshes on <code>chrome.alarms</code> and caches in <code>chrome.storage</code>, so the popup opens instantly.</li>
             <li>Least-privilege permissions: storage, alarms and the claude.ai host only, with no content script.</li>
           </ul>
-          <p class="case-links"><a href="https://github.com/PewDieRes/usage-hud-for-claude" rel="noopener">Source<span class="sr-only"> (Usage HUD for Claude)</span></a></p>
+          <p class="case-links"><a href="https://github.com/PewDieRes/usage-hud-for-claude" target="_blank" rel="noopener">Source<span class="sr-only"> (Usage HUD for Claude)</span></a></p>
         </article>
       </div>
     </section>
@@ -452,25 +462,25 @@
     <section class="shell block" id="skills" aria-labelledby="skills-title">
       <header class="block-head">
         <h2 id="skills-title">Skills</h2>
-        <p class="block-meta">from my resume</p>
+        <p class="block-meta"><strong class="core-key">Bold</strong> = named in my resume summary</p>
       </header>
       <div class="skills">
         <div class="skill-group">
           <h3>Backend</h3>
           <ul class="inline-list">
-            <li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>TypeORM</li><li>Sequelize</li><li>REST API design</li><li>Multi-tenant architecture</li><li>JWT and OAuth 2.0</li><li>RBAC and ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS</li><li>PDFKit</li>
+            <li class="core">TypeScript</li><li class="core">Node.js</li><li class="core">NestJS</li><li class="core">Express.js</li><li>JavaScript</li><li>TypeORM</li><li>Sequelize</li><li>REST API design</li><li>Multi-tenant architecture</li><li>JWT and OAuth 2.0</li><li>RBAC and ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS</li><li>PDFKit</li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>Databases</h3>
           <ul class="inline-list">
-            <li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li><li>SQL</li><li>Schema design</li><li>Indexing</li><li>Query optimization</li><li>Transactions</li>
+            <li class="core">PostgreSQL</li><li class="core">MySQL</li><li class="core">Redis</li><li>MongoDB</li><li>SQL</li><li>Schema design</li><li>Indexing</li><li>Query optimization</li><li>Transactions</li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>Cloud / DevOps</h3>
           <ul class="inline-list">
-            <li>AWS Lambda</li><li>Amazon ECS (EC2)</li><li>Amazon S3</li><li>Amazon SQS</li><li>Amazon EC2</li><li>Amazon RDS</li>
+            <li class="core">AWS Lambda</li><li class="core">Amazon ECS (EC2)</li><li class="core">Amazon S3</li><li class="core">Amazon SQS</li><li>Amazon EC2</li><li>Amazon RDS</li>
           </ul>
         </div>
         <div class="skill-group">
@@ -523,15 +533,15 @@
         <button class="copy" type="button" data-copy="vazemihir2001@gmail.com" hidden>Copy email</button>
       </p>
       <ul class="contact-links">
-        <li><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" target="_blank" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/PewDieRes" target="_blank" rel="me noopener">GitHub</a></li>
         <li><a href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Resume (PDF)</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="shell footer">
-    <p>© <span id="year">2026</span> Mihir Vaze</p>
+    <p>© <span id="year">2026</span> Mihir Vaze · updated Nov 2026</p>
     <p>Plain HTML and CSS, no tracking. <a href="https://github.com/PewDieRes/PewDieRes.github.io" rel="noopener">Source</a></p>
   </footer>
 

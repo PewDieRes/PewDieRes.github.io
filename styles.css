@@ -104,11 +104,16 @@ a:hover { text-decoration-thickness: 2px; }
 .topbar-resume:hover { background: var(--ink); color: var(--paper); }
 
 /* ---------- Hero ---------- */
-.hero { padding-top: clamp(3rem, 9vw, 6.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); }
-.hero-eyebrow { font: 400 0.8125rem/1.5 var(--mono); color: var(--graphite); }
+.hero { padding-top: clamp(2.25rem, 6vw, 4.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font: 500 0.8125rem/1.5 var(--mono); color: var(--ink);
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 999px; padding: 0.3rem 0.8rem 0.3rem 0.7rem;
+}
+.status-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #1f9d55; box-shadow: 0 0 0 3px color-mix(in srgb, #1f9d55 22%, transparent); }
 .hero h1 {
   margin-top: 1.1rem;
-  font: 800 clamp(2.6rem, 10.4vw, 7.25rem)/0.92 var(--display);
+  font: 800 clamp(2.6rem, 10.4vw, 6.25rem)/0.92 var(--display);
   font-stretch: 125%;
   letter-spacing: -0.035em;
 }
@@ -118,10 +123,16 @@ a:hover { text-decoration-thickness: 2px; }
   font-stretch: 112%;
   color: var(--cobalt);
 }
+.facts-row {
+  display: grid; grid-template-columns: repeat(4, minmax(0, auto)); justify-content: start; gap: 0.75rem 2.75rem;
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+.facts-row dt { font: 400 0.6875rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--graphite); }
+.facts-row dd { margin-top: 0.25rem; font-weight: 600; font-size: 0.9875rem; }
 .hero-grid {
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem); align-items: start;
-  margin-top: clamp(2rem, 5vw, 3.25rem);
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
   padding-top: clamp(1.5rem, 3vw, 2rem);
   border-top: 1px solid var(--rule);
 }
@@ -195,7 +206,7 @@ a:hover { text-decoration-thickness: 2px; }
 .ticks li + li { margin-top: 0.5rem; }
 .ticks li::before {
   content: ""; position: absolute; left: 0; top: 0.72em;
-  width: 0.5rem; height: 1px; background: var(--cobalt);
+  width: 0.5rem; height: 2px; margin-top: -1px; background: var(--cobalt);
 }
 
 /* Experience + education rows */
@@ -206,6 +217,11 @@ a:hover { text-decoration-thickness: 2px; }
 .job-what h3 { font: 700 1.2rem/1.3 var(--display); font-stretch: 108%; }
 .job-what h3 span { font-weight: 500; color: var(--graphite); margin-left: 0.35rem; }
 .job-note { color: var(--graphite); font-size: 0.9375rem; margin-top: 0.2rem; }
+.job-promo {
+  display: inline-block; margin-top: 0.45rem; padding: 0.2rem 0.6rem;
+  font: 500 0.75rem/1.5 var(--mono); color: var(--cobalt);
+  background: var(--cobalt-wash); border-radius: 6px;
+}
 .job-what .ticks { margin-top: 0.9rem; max-width: 44rem; }
 .job-link {
   margin-top: 1.1rem; font-size: 0.9375rem;
@@ -309,7 +325,9 @@ a:hover { text-decoration-thickness: 2px; }
   font: 700 0.9375rem/1.2 var(--display); font-stretch: 112%;
   padding-bottom: 0.6rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--rule);
 }
-.inline-list li { font-size: 0.9375rem; line-height: 1.5; padding: 0.15rem 0; }
+.inline-list li { font-size: 0.9375rem; line-height: 1.5; padding: 0.15rem 0; color: var(--graphite); }
+.inline-list li.core { color: var(--ink); font-weight: 650; }
+.core-key { color: var(--ink); font-weight: 650; }
 
 /* ---------- Contact ---------- */
 .contact { padding-top: clamp(4.5rem, 10vw, 8rem); padding-bottom: 1rem; }
@@ -346,6 +364,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @media (max-width: 760px) {
+  .facts-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
   .system-wide { display: none !important; }
   .system-tall { display: block !important; }
   .system { background-size: 20px 20px; }
@@ -375,3 +394,5 @@ a:hover { text-decoration-thickness: 2px; }
   .topbar, .hero-actions, .skip-link, .copy { display: none !important; }
   body { background: #fff; }
 }
+
+@media (max-width: 560px) { .facts-row dd { font-size: 0.9375rem; } }
