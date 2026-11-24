@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mihir Vaze · Backend Engineer (Node.js, TypeScript, NestJS, AWS)</title>
+  <meta name="description" content="Mihir Vaze, backend engineer in Pune building production REST APIs and multi-tenant SaaS platforms with Node.js, TypeScript, NestJS, PostgreSQL and AWS.">
+  <meta name="author" content="Mihir Vaze">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://pewdieres.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pewdieres.github.io/">
+  <meta property="og:title" content="Mihir Vaze · Backend Engineer">
+  <meta property="og:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Production REST APIs and multi-tenant SaaS backends.">
+  <meta property="og:image" content="https://pewdieres.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mihir Vaze, Backend Engineer: Node.js, TypeScript, NestJS, AWS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mihir Vaze · Backend Engineer">
+  <meta name="twitter:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Production REST APIs and multi-tenant SaaS backends.">
+  <meta name="twitter:image" content="https://pewdieres.github.io/og-image.png">
+  <meta name="twitter:image:alt" content="Mihir Vaze, Backend Engineer: Node.js, TypeScript, NestJS, AWS">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mihir Vaze",
+    "jobTitle": "Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "Coditas LLP" },
+    "email": "mailto:vazemihir2001@gmail.com",
+    "url": "https://pewdieres.github.io/",
+    "sameAs": ["https://github.com/PewDieRes", "https://www.linkedin.com/in/mihir-vaze-a805a225b/"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Primary">
+      <a class="brand" href="#top">MV<span class="sr-only"> · Mihir Vaze, back to top</span></a>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" id="top" aria-labelledby="hero-name">
+      <p class="eyebrow">Pune, India · Open to backend and full&#8209;stack roles</p>
+      <h1 id="hero-name">Mihir Vaze</h1>
+      <p class="headline">Backend Engineer · Node.js, TypeScript, NestJS, AWS</p>
+      <p class="pitch">I build production REST APIs and multi-tenant SaaS backends with Node.js, TypeScript and PostgreSQL. At Coditas I own NestJS modules end to end, from schema design to AWS deployment, and fix production issues at the root cause.</p>
+      <ul class="actions">
+        <li><a class="btn btn-primary" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Resume (PDF)</a></li>
+        <li><a class="btn" href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
+        <li><a class="btn" href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
+        <li><a class="btn" href="mailto:vazemihir2001@gmail.com">Email</a></li>
+      </ul>
+    </section>
+
+    <section class="wrap section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+
+      <article class="role">
+        <header class="role-head">
+          <div>
+            <h3>Software Engineer <span class="org">· Coditas LLP</span></h3>
+            <p class="role-note">Promoted from Associate Software Engineer, Oct 2026</p>
+          </div>
+          <p class="meta">Jul 2025 – Present · Pune, India</p>
+        </header>
+        <ul class="bullets">
+          <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
+          <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by over 35%.</li>
+          <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by roughly 30%.</li>
+          <li>Resolved 50+ production bugs (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
+        </ul>
+
+        <div class="client">
+          <h4>Client project · Multi-tenant digital asset platform (sports media)</h4>
+          <p class="stack" aria-label="Stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS</p>
+          <ul class="bullets">
+            <li>Designed and built a generic FFmpeg transcoding service for video, image and arbitrary FFmpeg-argument jobs, processing files ingested across all tenants.</li>
+            <li>Architected size-based routing on Amazon SQS: jobs go to Lambda functions sized by file size, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
+            <li>Built content-hash file deduplication for S3 uploads, plus a backfill job that linked duplicates to their originals and removed ~12 TB of duplicate data (about 20% of total storage).</li>
+            <li>Prototyped an in-house ExifTool replacement for a third-party metadata SaaS: 100% parity on critical fields across 8 media formats and up to 76x faster extraction (~29 s to 381 ms).</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <header class="role-head">
+          <div>
+            <h3>Intern Associate Software Engineer <span class="org">· Coditas LLP</span></h3>
+          </div>
+          <p class="meta">Jan 2025 – May 2025 · Pune, India</p>
+        </header>
+        <ul class="bullets">
+          <li>Developed and documented secure REST APIs with Node.js, Express.js and Sequelize ORM for enterprise business workflows.</li>
+          <li>Designed normalized PostgreSQL and MySQL schemas with foreign keys and cascade constraints; wrote migrations, seeders and complex raw SQL queries.</li>
+          <li>Wrote unit and integration tests with Jest and Postman for critical data-import and authentication modules, preventing regressions across releases.</li>
+          <li>Shipped production-ready increments in agile sprints using Git branching, pull requests and peer code review.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="wrap section" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+
+      <article class="project featured" aria-labelledby="p-ttt">
+        <div class="project-body">
+          <h3 id="p-ttt">LLM Tic-Tac-Toe Tournament</h3>
+          <p class="stack">TypeScript · Node.js · Express.js · WebSockets · Vercel AI SDK · Zod</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Compare how LLMs from different providers play a constrained game, live, without one misbehaving model breaking the run.</dd>
+            <dt>Approach</dt>
+            <dd>A knockout tournament engine pits OpenAI, Anthropic, Google, Groq and Mistral models against each other and streams every move to the browser over WebSockets.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Provider-agnostic LLM layer: every model returns a Zod-validated <code>{ row, col }</code> move through the AI SDK's structured output, so adding a provider is configuration, not new game logic.</li>
+                <li>Defensive game loop: illegal or malformed moves are retried up to 3 times, then the player forfeits; drawn games are replayed with sides swapped.</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links"><a href="https://github.com/PewDieRes/GEN-AI-PROJECTS/tree/MIHIRS-AI-ASSISTANT/LLM-TIC-TAC-TOE" rel="noopener">Source on GitHub<span class="sr-only"> (LLM Tic-Tac-Toe Tournament)</span></a></p>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 320 432" role="img" aria-labelledby="d1-title d1-desc">
+            <title id="d1-title">LLM Tic-Tac-Toe Tournament architecture</title>
+            <desc id="d1-desc">The browser client talks to an Express and ws server over WebSocket. The server runs the tournament engine, which runs a game loop that validates moves, retries and forfeits. The game loop asks a provider layer built on the Vercel AI SDK for Zod-typed moves from OpenAI, Anthropic, Google, Groq and Mistral models.</desc>
+            <defs>
+              <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
+            </defs>
+            <g class="d-node"><rect x="20" y="8" width="280" height="48" rx="8"/><text x="160" y="29">Browser client</text><text x="160" y="46" class="d-sub">vanilla JS · live bracket view</text></g>
+            <line x1="160" y1="58" x2="160" y2="88" class="d-edge" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+            <text x="170" y="77" class="d-label" text-anchor="start">WebSocket · live events</text>
+            <g class="d-node"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Express + ws server</text><text x="160" y="128" class="d-sub">starts tournaments, broadcasts updates</text></g>
+            <line x1="160" y1="140" x2="160" y2="168" class="d-edge" marker-end="url(#arr1)"/>
+            <g class="d-node d-accent"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">Tournament engine</text><text x="160" y="208" class="d-sub">knockout bracket · byes · tie replays</text></g>
+            <line x1="160" y1="220" x2="160" y2="248" class="d-edge" marker-end="url(#arr1)"/>
+            <g class="d-node d-accent"><rect x="20" y="250" width="280" height="48" rx="8"/><text x="160" y="271">Game loop</text><text x="160" y="288" class="d-sub">validate move · 3 retries · forfeit</text></g>
+            <line x1="160" y1="300" x2="160" y2="328" class="d-edge" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+            <text x="170" y="319" class="d-label" text-anchor="start">prompt ↓ · Zod move ↑</text>
+            <g class="d-node"><rect x="20" y="330" width="280" height="48" rx="8"/><text x="160" y="351">Provider layer</text><text x="160" y="368" class="d-sub">Vercel AI SDK · generateObject</text></g>
+            <g class="d-chip">
+              <rect x="20" y="394" width="52" height="26" rx="13"/><text x="46" y="411">OpenAI</text>
+              <rect x="77" y="394" width="60" height="26" rx="13"/><text x="107" y="411">Anthropic</text>
+              <rect x="142" y="394" width="52" height="26" rx="13"/><text x="168" y="411">Google</text>
+              <rect x="199" y="394" width="44" height="26" rx="13"/><text x="221" y="411">Groq</text>
+              <rect x="248" y="394" width="52" height="26" rx="13"/><text x="274" y="411">Mistral</text>
+            </g>
+          </svg>
+          <figcaption>Request and event flow</figcaption>
+        </figure>
+      </article>
+
+      <article class="project featured" aria-labelledby="p-electro">
+        <div class="project-body">
+          <h3 id="p-electro">Electro: Multi-Tenant Utility Management Platform</h3>
+          <p class="stack">Node.js · Express.js · PostgreSQL · Sequelize · JWT</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Administrative organizations need to manage billing, consumer profiles and usage telemetry on one platform without seeing each other's data.</dd>
+            <dt>Approach</dt>
+            <dd>A multi-tenant Express backend on a shared PostgreSQL database with tenant isolation, serving consumers, field agents and super-admins.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Granular RBAC on top of JWT authentication, so each of the three roles only reaches the actions it is allowed.</li>
+                <li>Transactional audit logs for admin changes and payment workflows, so every sensitive change leaves a consistent record.</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <figure class="diagram">
+          <svg viewBox="0 0 320 396" role="img" aria-labelledby="d2-title d2-desc">
+            <title id="d2-title">Electro architecture</title>
+            <desc id="d2-desc">Consumers, field agents and super-admins call an Express API with a JWT. Requests pass JWT authentication middleware and an RBAC layer, then domain services for billing, consumer profiles and telemetry. Services use Sequelize transactions against a shared, tenant-isolated PostgreSQL database and an audit log.</desc>
+            <defs>
+              <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
+            </defs>
+            <g class="d-node"><rect x="20" y="8" width="280" height="48" rx="8"/><text x="160" y="29">Clients</text><text x="160" y="46" class="d-sub">consumers · field agents · super-admins</text></g>
+            <line x1="160" y1="58" x2="160" y2="88" class="d-edge" marker-end="url(#arr2)"/>
+            <text x="170" y="77" class="d-label" text-anchor="start">HTTPS · Bearer JWT</text>
+            <g class="d-node"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Express API</text><text x="160" y="128" class="d-sub">JWT authentication middleware</text></g>
+            <line x1="160" y1="140" x2="160" y2="168" class="d-edge" marker-end="url(#arr2)"/>
+            <g class="d-node d-accent"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">RBAC layer</text><text x="160" y="208" class="d-sub">role → permitted actions</text></g>
+            <line x1="160" y1="220" x2="160" y2="248" class="d-edge" marker-end="url(#arr2)"/>
+            <g class="d-node"><rect x="20" y="250" width="280" height="48" rx="8"/><text x="160" y="271">Domain services</text><text x="160" y="288" class="d-sub">billing · consumer profiles · telemetry</text></g>
+            <line x1="90" y1="300" x2="90" y2="330" class="d-edge" marker-end="url(#arr2)"/>
+            <line x1="230" y1="300" x2="230" y2="330" class="d-edge" marker-end="url(#arr2)"/>
+            <text x="160" y="320" class="d-label" text-anchor="middle">Sequelize · transactions</text>
+            <g class="d-node d-accent"><rect x="20" y="332" width="136" height="56" rx="8"/><text x="88" y="355">PostgreSQL</text><text x="88" y="373" class="d-sub">shared, tenant-isolated</text></g>
+            <g class="d-node"><rect x="164" y="332" width="136" height="56" rx="8"/><text x="232" y="355">Audit log</text><text x="232" y="373" class="d-sub">admin + payments</text></g>
+          </svg>
+          <figcaption>Request path and data layer</figcaption>
+        </figure>
+      </article>
+
+      <div class="project-grid">
+        <article class="project" aria-labelledby="p-todo">
+          <h3 id="p-todo">Do It: To-Do App (NestJS + MongoDB + React)</h3>
+          <p class="stack">TypeScript · NestJS · MongoDB · Mongoose · React · Jest · Supertest</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Build a mobile-first task app with weekly planning from a Figma design and a written brief, as an SDE-1 take-home assignment.</dd>
+            <dt>Approach</dt>
+            <dd>Own REST API in NestJS on MongoDB, React + Vite client, deployed to Render and Netlify, with tests on both sides.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Controller → service → injected repository interface and clock, so business rules are unit-tested against a fake repository; e2e tests run on in-memory MongoDB.</li>
+                <li>No login: a guard requires an anonymous per-browser client ID and every query is scoped to it, isolating each reviewer's data.</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links">
+            <a href="https://digiaccel-todo-mihir.netlify.app" rel="noopener">Live demo<span class="sr-only"> (Do It)</span></a>
+            <a href="https://github.com/PewDieRes/digiaccel-todo" rel="noopener">Source<span class="sr-only"> (Do It)</span></a>
+          </p>
+        </article>
+
+        <article class="project" aria-labelledby="p-mail">
+          <h3 id="p-mail">AI Email Classifier</h3>
+          <p class="stack">Python (scripting) · Laya decision model · Gmail API · OAuth 2.0 · Docker</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Sort a busy Gmail inbox automatically without sending email content to a third-party AI service.</dd>
+            <dt>Approach</dt>
+            <dd>A local tool that labels Gmail with Laya, an open-weight decision model running on-device. Classified 8,000+ emails into 12 categories such as Career, Finance, Security and Suspicious.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>Deterministic SPF, DKIM and DMARC checks run before the model, so phishing detection does not depend on model confidence.</li>
+                <li>Low-confidence emails get an Unsure label instead of a guess, and the tool only adds labels: it never archives, deletes or sends mail.</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links"><a href="https://github.com/PewDieRes/laya-mail-triage" rel="noopener">Source<span class="sr-only"> (AI Email Classifier)</span></a></p>
+        </article>
+
+        <article class="project" aria-labelledby="p-hud">
+          <h3 id="p-hud">Usage HUD for Claude</h3>
+          <p class="stack">JavaScript · Chrome Extensions (Manifest V3) · Service Workers</p>
+          <dl class="facts">
+            <dt>Problem</dt>
+            <dd>Claude's 5-hour and weekly usage limits are only visible deep in the settings page.</dd>
+            <dt>Approach</dt>
+            <dd>An open-source Chrome extension that shows both limits in the toolbar badge and a popup, from any tab.</dd>
+            <dt>Key decisions</dt>
+            <dd>
+              <ul class="bullets">
+                <li>A service worker refreshes on <code>chrome.alarms</code> and caches in <code>chrome.storage</code>, so the popup opens instantly.</li>
+                <li>Least-privilege permissions: storage, alarms and the claude.ai host only, with no content script.</li>
+              </ul>
+            </dd>
+          </dl>
+          <p class="links"><a href="https://github.com/PewDieRes/usage-hud-for-claude" rel="noopener">Source<span class="sr-only"> (Usage HUD for Claude)</span></a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Backend</h3>
+          <ul class="tags">
+            <li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>TypeORM</li><li>Sequelize</li>
+            <li>REST API design</li><li>Multi-tenant architecture</li><li>JWT · OAuth 2.0</li><li>RBAC · ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS · PDFKit</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Databases</h3>
+          <ul class="tags">
+            <li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li><li>SQL</li><li>Schema design</li><li>Indexing</li><li>Query optimization</li><li>Transactions</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cloud / DevOps</h3>
+          <ul class="tags">
+            <li>AWS Lambda</li><li>Amazon ECS (EC2)</li><li>Amazon S3</li><li>Amazon SQS</li><li>Amazon EC2</li><li>Amazon RDS</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="tags">
+            <li>Git · GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs (OpenAI, Anthropic, Gemini, Groq, Mistral)</li><li>Chrome Extensions (MV3)</li><li>Python (scripting)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <ul class="edu">
+        <li>
+          <div>
+            <h3>B.E. Computer Engineering</h3>
+            <p>JSPM Narhe Technical Campus (SPPU) · CGPA 8.4</p>
+          </div>
+          <p class="meta">2022 – 2025</p>
+        </li>
+        <li>
+          <div>
+            <h3>Diploma in Computer Engineering</h3>
+            <p>Government Polytechnic Malvan · 91%</p>
+          </div>
+          <p class="meta">2019 – 2022</p>
+        </li>
+      </ul>
+      <h3 class="minor">Certifications and achievements</h3>
+      <ul class="bullets">
+        <li>Namaste Dev Node.js: advanced certification covering the event loop, libuv, asynchronous architecture and streams.</li>
+        <li>Smart India Hackathon (SIH): Team Leader.</li>
+      </ul>
+    </section>
+
+    <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Hiring for a Node.js or TypeScript backend role? Email is the fastest way to reach me.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:vazemihir2001@gmail.com">vazemihir2001@gmail.com</a>
+          <button class="copy" type="button" data-copy="vazemihir2001@gmail.com" hidden>Copy</button></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">linkedin.com/in/mihir-vaze-a805a225b</a></li>
+        <li><span>GitHub</span><a href="https://github.com/PewDieRes" rel="me noopener">github.com/PewDieRes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>© <span id="year">2026</span> Mihir Vaze · Plain HTML and CSS, hosted on GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
