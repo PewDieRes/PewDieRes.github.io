@@ -396,3 +396,4 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @media (max-width: 560px) { .facts-row dd { font-size: 0.9375rem; } }
+.job-what > .ticks:first-child { margin-top: 0; }

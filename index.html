@@ -40,7 +40,7 @@
     "worksFor": { "@type": "Organization", "name": "Coditas LLP" },
     "email": "mailto:vazemihir2001@gmail.com",
     "url": "https://pewdieres.github.io/",
-    "sameAs": ["https://github.com/PewDieRes", "https://www.linkedin.com/in/mihir-vaze-a805a225b/"]
+    "sameAs": ["https://github.com/PewDieRes", "https://www.linkedin.com/in/mihir-vaze-a805a225b/", "https://leetcode.com/u/Mt4AaWRDkz/"]
   }
   </script>
 </head>
@@ -76,7 +76,7 @@
 
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="hero-pitch">I design and ship multi-tenant APIs, job queues and media pipelines in Node.js and TypeScript. At Coditas I own NestJS modules from schema design to AWS deployment, and I fix production bugs at the root cause.</p>
+          <p class="hero-pitch">I build backend systems with Node.js, TypeScript and NestJS on PostgreSQL and MySQL: shipping features, untangling performance bottlenecks and designing systems that scale without unnecessary overhead. At Coditas I built the FFmpeg pipeline that now processes essentially every file ingested into The Vault.</p>
           <ul class="hero-actions">
             <li><a class="button button-solid" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Download resume <span aria-hidden="true">↓</span></a></li>
             <li><a class="button" href="mailto:vazemihir2001@gmail.com">Email me</a></li>
@@ -120,24 +120,39 @@
     <section class="shell block" id="experience" aria-labelledby="experience-title">
       <header class="block-head">
         <h2 id="experience-title">Experience</h2>
-        <p class="block-meta">Coditas LLP · 2 roles</p>
+        <p class="block-meta">Coditas LLP · since Jan 2025 · 3 roles</p>
       </header>
 
       <article class="job">
         <div class="job-when">
-          <p>Jul 2025 – Present</p>
+          <p>Oct 2026 – Present</p>
           <p>Pune, India</p>
         </div>
         <div class="job-what">
           <h3>Software Engineer <span>Coditas LLP</span></h3>
           <p class="job-promo"><span aria-hidden="true">↑</span> Promoted from Associate Software Engineer, Oct 2026</p>
           <ul class="ticks">
+            <li>Built a generic FFmpeg transcoding service for The Vault that handles video, images and arbitrary FFmpeg arguments through one pipeline. It now processes <strong>essentially every file ingested</strong> into the platform.</li>
+            <li>Designed the job routing on AWS: SQS sends each job to a differently sized Lambda function based on file size, and files that would exceed Lambda's maximum runtime fall back to ECS on EC2.</li>
             <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
-            <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by <strong>over 35%</strong>.</li>
-            <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by <strong>roughly 30%</strong>.</li>
-            <li>Resolved <strong>50+ production bugs</strong> (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
           </ul>
           <p class="job-link">Main client project: <a href="#p-vault">The Vault, a multi-tenant digital asset platform</a> (FFmpeg pipeline, ~12 TB of duplicates removed)</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-when">
+          <p>Jul 2025 – Oct 2026</p>
+          <p>Pune, India</p>
+        </div>
+        <div class="job-what">
+          <h3>Associate Software Engineer <span>Coditas LLP</span></h3>
+          <ul class="ticks">
+            <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, reducing database load during authentication and cutting read latency on high-traffic endpoints by <strong>over 35%</strong>.</li>
+            <li>Refactored legacy endpoints and designed targeted PostgreSQL indexing, restructured joins and rewrote slow queries, cutting API response times by <strong>roughly 30%</strong>.</li>
+            <li>Implemented content-hash deduplication that stops redundant media processing; a backfill job removed <strong>~12 TB</strong> of duplicate data.</li>
+            <li>Resolved <strong>50+ production bugs</strong> (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
+          </ul>
         </div>
       </article>
 
@@ -152,7 +167,7 @@
             <li>Developed and documented secure REST APIs with Node.js, Express.js and Sequelize ORM for enterprise business workflows.</li>
             <li>Designed normalized PostgreSQL and MySQL schemas with foreign keys and cascade constraints; wrote migrations, seeders and complex raw SQL queries.</li>
             <li>Wrote unit and integration tests with Jest and Postman for critical data-import and authentication modules, preventing regressions across releases.</li>
-            <li>Shipped production-ready increments in agile sprints using Git branching, pull requests and peer code review.</li>
+            <li>Built <a href="#p-electro">Electro</a>, a multi-tenant electricity board system, to get hands-on with multi-tenant architecture and role-based access control.</li>
           </ul>
         </div>
       </article>
@@ -162,7 +177,7 @@
     <section class="shell block" id="projects" aria-labelledby="projects-title">
       <header class="block-head">
         <h2 id="projects-title">Projects</h2>
-        <p class="block-meta">7 projects · 1 client, 6 personal</p>
+        <p class="block-meta">7 projects · client, internship and personal</p>
       </header>
 
       <!-- The Vault -->
@@ -193,6 +208,7 @@
             <dd>
               <ul class="ticks">
                 <li>A backfill job removed ~12 TB of duplicate data, 20% of 60 TB across all tenants.</li>
+                <li>The transcoding service now processes essentially every file ingested into the platform.</li>
                 <li>An in-house ExifTool prototype matched a third-party metadata SaaS on critical fields across 8 media formats, up to 76× faster.</li>
               </ul>
             </dd>
@@ -355,17 +371,17 @@
       </article>
 
       <!-- Electro -->
-      <article class="case case-split" aria-labelledby="p-electro">
+      <article class="case case-split" id="p-electro" aria-labelledby="p-electro-title">
         <div class="case-body">
           <header class="case-head">
-            <p class="case-kicker">Personal</p>
-            <h3 id="p-electro">Electro: Multi-Tenant Utility Management</h3>
-            <p class="case-sub">Billing and telemetry backend with tenant isolation and role-based access</p>
+            <p class="case-kicker">Built during my internship at Coditas</p>
+            <h3 id="p-electro-title">Electro: Multi-Tenant Electricity Board System</h3>
+            <p class="case-sub">Billing, consumer and telemetry backend with tenant isolation and role-based access</p>
             <p class="case-stack">Node.js · Express.js · PostgreSQL · Sequelize · JWT</p>
           </header>
           <dl class="case-facts">
             <dt>Problem</dt>
-            <dd>Administrative organizations need to manage billing, consumer profiles and usage telemetry on one platform without seeing each other's data.</dd>
+            <dd>Electricity boards need to manage billing, consumer profiles and usage telemetry on one platform without seeing each other's data.</dd>
             <dt>Approach</dt>
             <dd>A multi-tenant Express backend on a shared PostgreSQL database with tenant isolation, serving consumers, field agents and super-admins.</dd>
             <dt>Key decisions</dt>
@@ -448,7 +464,7 @@
           <p class="case-kicker">Personal · open source</p>
           <h3 id="p-hud">Usage HUD for Claude</h3>
           <p class="case-stack">JavaScript · Chrome Extensions (MV3) · Service Workers</p>
-          <p class="mini-lede">A Chrome extension that shows Claude's 5-hour and weekly usage limits in the toolbar badge and a popup, from any tab.</p>
+          <p class="mini-lede">A Chrome extension that shows Claude's 5-hour and weekly usage limits in the toolbar badge and a popup, from any tab. I also built a custom Claude Code status line.</p>
           <ul class="ticks">
             <li>A service worker refreshes on <code>chrome.alarms</code> and caches in <code>chrome.storage</code>, so the popup opens instantly.</li>
             <li>Least-privilege permissions: storage, alarms and the claude.ai host only, with no content script.</li>
@@ -486,7 +502,7 @@
         <div class="skill-group">
           <h3>Tools</h3>
           <ul class="inline-list">
-            <li>Git and GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs: OpenAI, Anthropic, Gemini, Groq, Mistral</li><li>Chrome Extensions (MV3)</li><li>Python (scripting)</li>
+            <li>Git and GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs: OpenAI, Anthropic, Gemini, Groq, Mistral</li><li>Chrome Extensions (MV3)</li><li>AI-assisted development: Claude Code, OpenAI Codex</li><li>Python (scripting)</li>
           </ul>
         </div>
       </div>
@@ -495,7 +511,7 @@
     <!-- Education -->
     <section class="shell block" id="education" aria-labelledby="education-title">
       <header class="block-head">
-        <h2 id="education-title">Education</h2>
+        <h2 id="education-title">Education and certifications</h2>
       </header>
       <div class="edu">
         <article class="job">
@@ -516,9 +532,27 @@
           <div class="job-when"><p>Certifications</p></div>
           <div class="job-what">
             <ul class="ticks">
-              <li>Namaste Dev Node.js: advanced certification covering the event loop, libuv, asynchronous architecture and streams.</li>
-              <li>Smart India Hackathon (SIH): Team Leader.</li>
+              <li>Microsoft Certified: Azure Fundamentals</li>
+              <li>Namaste Dev Node.js: advanced certification covering the event loop, libuv, asynchronous architecture and streams</li>
+              <li>Backend Development and APIs (V8)</li>
+              <li>LFS184: Introduction to JavaScript Security (Linux Foundation)</li>
+              <li>GEN AI Training Program</li>
+              <li>Build with Codex (OpenAI × GeeksforGeeks)</li>
             </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="job-when"><p>Achievements</p></div>
+          <div class="job-what">
+            <ul class="ticks">
+              <li>Smart India Hackathon (SIH): Team Leader</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="job-when"><p>Languages</p></div>
+          <div class="job-what">
+            <p>English (full professional) · Hindi (full professional) · Marathi (native)</p>
           </div>
         </article>
       </div>
@@ -535,6 +569,7 @@
       <ul class="contact-links">
         <li><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" target="_blank" rel="me noopener">LinkedIn</a></li>
         <li><a href="https://github.com/PewDieRes" target="_blank" rel="me noopener">GitHub</a></li>
+        <li><a href="https://leetcode.com/u/Mt4AaWRDkz/" target="_blank" rel="me noopener">LeetCode</a></li>
         <li><a href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Resume (PDF)</a></li>
       </ul>
     </section>
