@@ -4,30 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mihir Vaze · Backend Engineer (Node.js, TypeScript, NestJS, AWS)</title>
-  <meta name="description" content="Mihir Vaze, backend engineer in Pune building production REST APIs and multi-tenant SaaS platforms with Node.js, TypeScript, NestJS, PostgreSQL and AWS.">
+  <meta name="description" content="Mihir Vaze, backend engineer in Pune building multi-tenant APIs, job queues and media pipelines with Node.js, TypeScript, NestJS, PostgreSQL and AWS.">
   <meta name="author" content="Mihir Vaze">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#eef0ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e141a" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://pewdieres.github.io/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pewdieres.github.io/">
   <meta property="og:title" content="Mihir Vaze · Backend Engineer">
-  <meta property="og:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Production REST APIs and multi-tenant SaaS backends.">
+  <meta property="og:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Multi-tenant APIs, job queues and media pipelines.">
   <meta property="og:image" content="https://pewdieres.github.io/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Mihir Vaze, Backend Engineer: Node.js, TypeScript, NestJS, AWS">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mihir Vaze · Backend Engineer">
-  <meta name="twitter:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Production REST APIs and multi-tenant SaaS backends.">
+  <meta name="twitter:description" content="Node.js, TypeScript, NestJS, PostgreSQL and AWS. Multi-tenant APIs, job queues and media pipelines.">
   <meta name="twitter:image" content="https://pewdieres.github.io/og-image.png">
   <meta name="twitter:image:alt" content="Mihir Vaze, Backend Engineer: Node.js, TypeScript, NestJS, AWS">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -46,148 +47,277 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="wrap nav" aria-label="Primary">
-      <a class="brand" href="#top">MV<span class="sr-only"> · Mihir Vaze, back to top</span></a>
-      <ul class="nav-links">
+  <header class="topbar">
+    <nav class="shell topbar-inner" aria-label="Primary">
+      <a class="mark" href="#top">MV<span class="sr-only"> · Mihir Vaze, back to top</span></a>
+      <ul class="topbar-links">
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a class="topbar-resume" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Resume<span aria-hidden="true"> ↓</span></a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="wrap hero" id="top" aria-labelledby="hero-name">
-      <p class="eyebrow">Pune, India · Open to backend and full&#8209;stack roles</p>
+    <!-- Hero -->
+    <section class="shell hero" id="top" aria-labelledby="hero-name">
+      <p class="hero-eyebrow">Backend engineer · Pune, India · open to backend and full&#8209;stack roles</p>
       <h1 id="hero-name">Mihir Vaze</h1>
-      <p class="headline">Backend Engineer · Node.js, TypeScript, NestJS, AWS</p>
-      <p class="pitch">I build production REST APIs and multi-tenant SaaS backends with Node.js, TypeScript and PostgreSQL. At Coditas I own NestJS modules end to end, from schema design to AWS deployment, and fix production issues at the root cause.</p>
-      <ul class="actions">
-        <li><a class="btn btn-primary" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Resume (PDF)</a></li>
-        <li><a class="btn" href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
-        <li><a class="btn" href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
-        <li><a class="btn" href="mailto:vazemihir2001@gmail.com">Email</a></li>
-      </ul>
+      <p class="hero-stack">Node.js · TypeScript · NestJS · AWS</p>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-pitch">I design and ship multi-tenant APIs, job queues and media pipelines in Node.js and TypeScript. At Coditas I own NestJS modules from schema design to AWS deployment, and I fix production bugs at the root cause.</p>
+          <ul class="hero-actions">
+            <li><a class="button button-solid" href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Download resume <span aria-hidden="true">↓</span></a></li>
+            <li><a class="button" href="mailto:vazemihir2001@gmail.com">Email me</a></li>
+            <li class="hero-out"><a href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
+            <li class="hero-out"><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <figure class="trace" aria-labelledby="trace-caption">
+          <figcaption id="trace-caption">
+            <span class="trace-title">Before → after</span>
+            <span class="trace-source">from my work at Coditas</span>
+          </figcaption>
+          <ul class="trace-rows">
+            <li class="trace-row" style="--after: 1.3%">
+              <p class="trace-name">Media metadata extraction <span class="trace-tag">prototype</span></p>
+              <div class="trace-bar" aria-hidden="true"><span class="trace-after"></span></div>
+              <p class="trace-value"><strong>29 s → 381 ms</strong> up to 76× faster</p>
+            </li>
+            <li class="trace-row" style="--after: 65%">
+              <p class="trace-name">DB read latency, high-traffic endpoints</p>
+              <div class="trace-bar" aria-hidden="true"><span class="trace-after"></span></div>
+              <p class="trace-value"><strong>over 35% lower</strong> Redis ACL / RBAC cache</p>
+            </li>
+            <li class="trace-row" style="--after: 70%">
+              <p class="trace-name">API response time</p>
+              <div class="trace-bar" aria-hidden="true"><span class="trace-after"></span></div>
+              <p class="trace-value"><strong>~30% lower</strong> indexing and query rewrites</p>
+            </li>
+            <li class="trace-row" style="--after: 80%">
+              <p class="trace-name">Stored media across tenants</p>
+              <div class="trace-bar" aria-hidden="true"><span class="trace-after"></span></div>
+              <p class="trace-value"><strong>60 TB → 48 TB</strong> content-hash dedup</p>
+            </li>
+          </ul>
+        </figure>
+      </div>
     </section>
 
-    <section class="wrap section" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+    <!-- Experience -->
+    <section class="shell block" id="experience" aria-labelledby="experience-title">
+      <header class="block-head">
+        <h2 id="experience-title">Experience</h2>
+        <p class="block-meta">Coditas LLP · 2 roles</p>
+      </header>
 
-      <article class="role">
-        <header class="role-head">
-          <div>
-            <h3>Software Engineer <span class="org">· Coditas LLP</span></h3>
-            <p class="role-note">Promoted from Associate Software Engineer, Oct 2026</p>
-          </div>
-          <p class="meta">Jul 2025 – Present · Pune, India</p>
-        </header>
-        <ul class="bullets">
-          <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
-          <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by over 35%.</li>
-          <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by roughly 30%.</li>
-          <li>Resolved 50+ production bugs (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
-        </ul>
-
-        <p class="client-ref">Main client project: <strong>The Vault</strong>, a multi-tenant digital asset platform. <a href="#p-vault">See it in Projects</a></p>
+      <article class="job">
+        <div class="job-when">
+          <p>Jul 2025 – Present</p>
+          <p>Pune, India</p>
+        </div>
+        <div class="job-what">
+          <h3>Software Engineer <span>Coditas LLP</span></h3>
+          <p class="job-note">Promoted from Associate Software Engineer, Oct 2026</p>
+          <ul class="ticks">
+            <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
+            <li>Engineered a centralized Redis caching and authorization layer for ACL and RBAC checks, cutting database read latency on high-traffic endpoints by over 35%.</li>
+            <li>Improved PostgreSQL performance with targeted indexing, restructured joins and rewritten slow queries, reducing API response times by roughly 30%.</li>
+            <li>Resolved 50+ production bugs (async race conditions, memory leaks, third-party integration failures) with root-cause fixes, not patches.</li>
+          </ul>
+          <p class="job-link">Main client project: <a href="#p-vault">The Vault, a multi-tenant digital asset platform</a></p>
+        </div>
       </article>
 
-      <article class="role">
-        <header class="role-head">
-          <div>
-            <h3>Intern Associate Software Engineer <span class="org">· Coditas LLP</span></h3>
-          </div>
-          <p class="meta">Jan 2025 – May 2025 · Pune, India</p>
-        </header>
-        <ul class="bullets">
-          <li>Developed and documented secure REST APIs with Node.js, Express.js and Sequelize ORM for enterprise business workflows.</li>
-          <li>Designed normalized PostgreSQL and MySQL schemas with foreign keys and cascade constraints; wrote migrations, seeders and complex raw SQL queries.</li>
-          <li>Wrote unit and integration tests with Jest and Postman for critical data-import and authentication modules, preventing regressions across releases.</li>
-          <li>Shipped production-ready increments in agile sprints using Git branching, pull requests and peer code review.</li>
-        </ul>
+      <article class="job">
+        <div class="job-when">
+          <p>Jan 2025 – May 2025</p>
+          <p>Pune, India</p>
+        </div>
+        <div class="job-what">
+          <h3>Intern Associate Software Engineer <span>Coditas LLP</span></h3>
+          <ul class="ticks">
+            <li>Developed and documented secure REST APIs with Node.js, Express.js and Sequelize ORM for enterprise business workflows.</li>
+            <li>Designed normalized PostgreSQL and MySQL schemas with foreign keys and cascade constraints; wrote migrations, seeders and complex raw SQL queries.</li>
+            <li>Wrote unit and integration tests with Jest and Postman for critical data-import and authentication modules, preventing regressions across releases.</li>
+            <li>Shipped production-ready increments in agile sprints using Git branching, pull requests and peer code review.</li>
+          </ul>
+        </div>
       </article>
     </section>
 
-    <section class="wrap section" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+    <!-- Projects -->
+    <section class="shell block" id="projects" aria-labelledby="projects-title">
+      <header class="block-head">
+        <h2 id="projects-title">Projects</h2>
+        <p class="block-meta">7 projects · 1 client, 6 personal</p>
+      </header>
 
-      <article class="project featured" aria-labelledby="p-vault-title" id="p-vault">
-        <div class="project-body">
-          <p class="kicker">Client project at Coditas · in production</p>
-          <h3 id="p-vault-title">The Vault by TGI Sport: Multi-Tenant Digital Asset Platform</h3>
-          <p class="stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS</p>
-          <dl class="facts">
+      <!-- The Vault -->
+      <article class="case case-lead" id="p-vault" aria-labelledby="p-vault-title">
+        <header class="case-head">
+          <p class="case-kicker">Client project at Coditas · in production</p>
+          <h3 id="p-vault-title">The Vault by TGI Sport</h3>
+          <p class="case-sub">Multi-tenant digital asset platform</p>
+          <p class="case-stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS · ExcelJS · PDFKit</p>
+        </header>
+
+        <div class="case-cols">
+          <dl class="case-facts">
             <dt>Problem</dt>
-            <dd>Sports media and advertising teams across multiple leagues share one platform for their media. Every ingested file has to be processed, from small images to very large videos, with strict tenant isolation.</dd>
+            <dd>Sports media and advertising teams across multiple leagues share one platform for their media. Every ingested file, from small images to very large videos, has to be processed while each tenant stays strictly isolated.</dd>
             <dt>Approach</dt>
-            <dd>I designed and built a generic FFmpeg transcoding service for video, image and arbitrary FFmpeg-argument jobs, fed through Amazon SQS, plus REST APIs for async file processing and bulk multipart S3 uploads.</dd>
+            <dd>I built backend features across the platform: tenant-level access control, REST APIs for bulk multipart uploads and async file processing, a generic FFmpeg transcoding service, and Excel and PDF features on Lambda.</dd>
+          </dl>
+          <dl class="case-facts">
             <dt>Key decisions</dt>
             <dd>
-              <ul class="bullets">
-                <li>Size-based routing: jobs go to Lambda functions with different memory and timeout sizes by file size, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
-                <li>Content-hash deduplication: a duplicate upload references the original S3 object through an <code>originalFileId</code> but still behaves as a distinct file in the app.</li>
+              <ul class="ticks">
+                <li><strong>Route by file size.</strong> SQS jobs go to Lambda functions with different memory and timeout sizes, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
+                <li><strong>Deduplicate by content hash.</strong> A duplicate upload points at the original S3 object through an <code>originalFileId</code> but still behaves as its own file in the app.</li>
               </ul>
             </dd>
             <dt>Impact</dt>
             <dd>
-              <ul class="bullets">
-                <li>A backfill job hashed existing files and removed ~12 TB of duplicate data, about 20% of storage across all tenants.</li>
-                <li>Prototyped an in-house ExifTool replacement for a third-party metadata SaaS: 100% parity on critical fields across 8 media formats and up to 76x faster extraction (~29 s to 381 ms).</li>
+              <ul class="ticks">
+                <li>A backfill job removed ~12 TB of duplicate data, 20% of 60 TB across all tenants.</li>
+                <li>An in-house ExifTool prototype matched a third-party metadata SaaS on critical fields across 8 media formats, up to 76× faster.</li>
               </ul>
             </dd>
           </dl>
-          <p class="links-note">Client code is private.</p>
         </div>
-        <figure class="diagram">
-          <svg viewBox="0 0 320 330" role="img" aria-labelledby="d0-title d0-desc">
-            <title id="d0-title">The Vault media pipeline architecture</title>
-            <desc id="d0-desc">A multi-tenant NestJS API handles multipart uploads and content-hash deduplication, then enqueues FFmpeg jobs on Amazon SQS. Jobs are routed by file size to a small Lambda, a larger Lambda, or an ECS task on EC2 for very large files. Outputs and deduplicated originals are stored in Amazon S3.</desc>
+
+        <figure class="system">
+          <svg class="system-wide dg" viewBox="0 0 960 384" role="img" aria-labelledby="vw-title vw-desc">
+            <title id="vw-title">The Vault system architecture</title>
+            <desc id="vw-desc">Tenant teams call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features. It uses Redis as an ACL and RBAC cache and PostgreSQL on RDS through TypeORM. Uploads go to Amazon S3. Processing jobs go to Amazon SQS and are routed by file size to the FFmpeg transcoding service: a Lambda for smaller files, a Lambda for larger files, or an ECS task on EC2 for very large files. Workers write to S3. A metadata extraction Lambda, prototyped with ExifTool, reads files from S3.</desc>
             <defs>
-              <marker id="arr0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
+              <marker id="vw-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
             </defs>
-            <g class="d-node"><rect x="20" y="8" width="280" height="48" rx="8"/><text x="160" y="29">NestJS API (multi-tenant)</text><text x="160" y="46" class="d-sub">multipart uploads · content-hash dedup</text></g>
-            <line x1="160" y1="58" x2="160" y2="88" class="d-edge" marker-end="url(#arr0)"/>
-            <text x="170" y="77" class="d-label" text-anchor="start">enqueue job</text>
-            <g class="d-node d-accent"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Amazon SQS</text><text x="160" y="128" class="d-sub">FFmpeg jobs · routed by file size</text></g>
-            <line x1="130" y1="140" x2="64" y2="178" class="d-edge" marker-end="url(#arr0)"/>
-            <line x1="160" y1="140" x2="160" y2="178" class="d-edge" marker-end="url(#arr0)"/>
-            <line x1="190" y1="140" x2="256" y2="178" class="d-edge" marker-end="url(#arr0)"/>
-            <g class="d-node"><rect x="20" y="180" width="88" height="56" rx="8"/><text x="64" y="203">Lambda</text><text x="64" y="221" class="d-sub">small files</text></g>
-            <g class="d-node"><rect x="116" y="180" width="88" height="56" rx="8"/><text x="160" y="203">Lambda</text><text x="160" y="221" class="d-sub">more memory</text></g>
-            <g class="d-node d-accent"><rect x="212" y="180" width="88" height="56" rx="8"/><text x="256" y="203">ECS on EC2</text><text x="256" y="221" class="d-sub">very large files</text></g>
-            <line x1="64" y1="238" x2="64" y2="268" class="d-edge" marker-end="url(#arr0)"/>
-            <line x1="160" y1="238" x2="160" y2="268" class="d-edge" marker-end="url(#arr0)"/>
-            <line x1="256" y1="238" x2="256" y2="268" class="d-edge" marker-end="url(#arr0)"/>
-            <g class="d-node"><rect x="20" y="270" width="280" height="48" rx="8"/><text x="160" y="291">Amazon S3</text><text x="160" y="308" class="d-sub">transcoded outputs · deduped originals</text></g>
+
+            <g class="d-node"><rect x="8" y="150" width="128" height="84" rx="8"/><text x="72" y="182">Tenant teams</text><text x="72" y="200" class="d-sub">media &amp; ad teams</text><text x="72" y="216" class="d-sub">multiple leagues</text></g>
+            <line x1="138" y1="192" x2="178" y2="192" class="d-edge" marker-end="url(#vw-arr)"/>
+            <text x="158" y="184" class="d-label" text-anchor="middle">HTTPS</text>
+
+            <g class="d-group"><rect x="180" y="40" width="280" height="252" rx="12"/></g>
+            <text x="196" y="63" class="d-title">NestJS API</text>
+            <text x="444" y="63" class="d-label" text-anchor="end">multi-tenant</text>
+            <g class="d-node d-mine"><rect x="196" y="76" width="248" height="46" rx="7"/><text x="210" y="96" class="d-start">Tenant isolation · access control</text><text x="210" y="112" class="d-sub d-start">tenant-level RBAC and ACL</text></g>
+            <g class="d-node d-mine"><rect x="196" y="130" width="248" height="46" rx="7"/><text x="210" y="150" class="d-start">Upload APIs</text><text x="210" y="166" class="d-sub d-start">bulk multipart · content-hash dedup</text></g>
+            <g class="d-node d-mine"><rect x="196" y="184" width="248" height="46" rx="7"/><text x="210" y="204" class="d-start">Async processing APIs</text><text x="210" y="220" class="d-sub d-start">queue jobs to workers</text></g>
+            <g class="d-node d-mine"><rect x="196" y="238" width="248" height="46" rx="7"/><text x="210" y="258" class="d-start">Excel &amp; PDF features</text><text x="210" y="274" class="d-sub d-start">ExcelJS on Lambda · PDFKit mockups</text></g>
+
+            <line x1="246" y1="294" x2="246" y2="318" class="d-edge" marker-end="url(#vw-arr)"/>
+            <line x1="394" y1="294" x2="394" y2="318" class="d-edge" marker-end="url(#vw-arr)"/>
+            <g class="d-node d-mine"><rect x="180" y="320" width="132" height="56" rx="8"/><text x="246" y="343">Redis</text><text x="246" y="361" class="d-sub">ACL / RBAC cache</text></g>
+            <g class="d-node"><rect x="328" y="320" width="132" height="56" rx="8"/><text x="394" y="343">PostgreSQL</text><text x="394" y="361" class="d-sub">RDS · TypeORM</text></g>
+
+            <path d="M446 153 H488 V22 H901 V66" class="d-edge d-route" marker-end="url(#vw-arr)"/>
+            <text x="694" y="15" class="d-label" text-anchor="middle">multipart upload</text>
+
+            <line x1="446" y1="207" x2="508" y2="207" class="d-edge" marker-end="url(#vw-arr)"/>
+            <text x="478" y="199" class="d-label" text-anchor="middle">jobs</text>
+            <g class="d-node d-mine"><rect x="510" y="150" width="114" height="80" rx="8"/><text x="567" y="180">Amazon SQS</text><text x="567" y="198" class="d-sub">routed by</text><text x="567" y="213" class="d-sub">file size</text></g>
+
+            <g class="d-group d-group-mine"><rect x="652" y="38" width="172" height="212" rx="12"/></g>
+            <text x="738" y="58" class="d-title" text-anchor="middle">FFmpeg transcoding</text>
+            <line x1="626" y1="184" x2="666" y2="96" class="d-edge" marker-end="url(#vw-arr)"/>
+            <line x1="626" y1="190" x2="666" y2="154" class="d-edge" marker-end="url(#vw-arr)"/>
+            <line x1="626" y1="198" x2="666" y2="212" class="d-edge" marker-end="url(#vw-arr)"/>
+            <g class="d-node d-mine"><rect x="668" y="70" width="140" height="48" rx="7"/><text x="738" y="90">Lambda</text><text x="738" y="107" class="d-sub">smaller files</text></g>
+            <g class="d-node d-mine"><rect x="668" y="128" width="140" height="48" rx="7"/><text x="738" y="148">Lambda</text><text x="738" y="165" class="d-sub">larger files</text></g>
+            <g class="d-node d-mine"><rect x="668" y="186" width="140" height="48" rx="7"/><text x="738" y="206">ECS task on EC2</text><text x="738" y="223" class="d-sub">beyond Lambda limits</text></g>
+
+            <line x1="810" y1="94" x2="848" y2="94" class="d-edge" marker-end="url(#vw-arr)"/>
+            <line x1="810" y1="152" x2="848" y2="152" class="d-edge" marker-end="url(#vw-arr)"/>
+            <line x1="810" y1="210" x2="848" y2="210" class="d-edge" marker-end="url(#vw-arr)"/>
+
+            <g class="d-node d-mine d-proto"><rect x="668" y="276" width="140" height="48" rx="7"/><text x="738" y="296">Metadata Lambda</text><text x="738" y="313" class="d-sub">ExifTool prototype</text></g>
+            <line x1="810" y1="300" x2="848" y2="300" class="d-edge d-dashed" marker-start="url(#vw-arr)"/>
+            <text x="829" y="292" class="d-label" text-anchor="middle">reads</text>
+
+            <g class="d-node"><rect x="850" y="68" width="102" height="256" rx="10"/><text x="901" y="180">Amazon S3</text><text x="901" y="198" class="d-sub">originals</text><text x="901" y="214" class="d-sub">renditions</text><text x="901" y="230" class="d-sub">one object</text><text x="901" y="245" class="d-sub">per hash</text></g>
           </svg>
-          <figcaption>Ingest and transcoding pipeline</figcaption>
+
+          <svg class="system-tall dg" viewBox="0 0 340 756" role="img" aria-labelledby="vt-title vt-desc">
+            <title id="vt-title">The Vault system architecture</title>
+            <desc id="vt-desc">Tenant teams call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features, backed by Redis as an ACL and RBAC cache and PostgreSQL on RDS. Jobs go to Amazon SQS and are routed by file size to the FFmpeg transcoding service: Lambda for smaller files, Lambda for larger files, or ECS on EC2 for very large files. Outputs land in Amazon S3, which a metadata extraction Lambda prototyped with ExifTool reads from.</desc>
+            <defs>
+              <marker id="vt-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
+            </defs>
+            <g class="d-node"><rect x="20" y="8" width="300" height="48" rx="8"/><text x="170" y="29">Tenant teams</text><text x="170" y="46" class="d-sub">media &amp; ad teams · multiple leagues</text></g>
+            <line x1="170" y1="58" x2="170" y2="84" class="d-edge" marker-end="url(#vt-arr)"/>
+            <text x="180" y="75" class="d-label" text-anchor="start">HTTPS</text>
+
+            <g class="d-group"><rect x="20" y="86" width="300" height="246" rx="12"/></g>
+            <text x="34" y="108" class="d-title">NestJS API</text>
+            <text x="306" y="108" class="d-label" text-anchor="end">multi-tenant</text>
+            <g class="d-node d-mine"><rect x="32" y="118" width="276" height="46" rx="7"/><text x="46" y="138" class="d-start">Tenant isolation · access control</text><text x="46" y="154" class="d-sub d-start">tenant-level RBAC and ACL</text></g>
+            <g class="d-node d-mine"><rect x="32" y="170" width="276" height="46" rx="7"/><text x="46" y="190" class="d-start">Upload APIs</text><text x="46" y="206" class="d-sub d-start">bulk multipart · content-hash dedup</text></g>
+            <g class="d-node d-mine"><rect x="32" y="222" width="276" height="46" rx="7"/><text x="46" y="242" class="d-start">Async processing APIs</text><text x="46" y="258" class="d-sub d-start">queue jobs to workers</text></g>
+            <g class="d-node d-mine"><rect x="32" y="274" width="276" height="46" rx="7"/><text x="46" y="294" class="d-start">Excel &amp; PDF features</text><text x="46" y="310" class="d-sub d-start">ExcelJS on Lambda · PDFKit</text></g>
+
+            <line x1="85" y1="334" x2="85" y2="356" class="d-edge" marker-end="url(#vt-arr)"/>
+            <line x1="255" y1="334" x2="255" y2="356" class="d-edge" marker-end="url(#vt-arr)"/>
+            <g class="d-node d-mine"><rect x="20" y="358" width="130" height="52" rx="8"/><text x="85" y="380">Redis</text><text x="85" y="397" class="d-sub">ACL / RBAC cache</text></g>
+            <g class="d-node"><rect x="190" y="358" width="130" height="52" rx="8"/><text x="255" y="380">PostgreSQL</text><text x="255" y="397" class="d-sub">RDS · TypeORM</text></g>
+
+            <line x1="170" y1="334" x2="170" y2="434" class="d-edge" marker-end="url(#vt-arr)"/>
+            <g class="d-node d-mine"><rect x="20" y="436" width="300" height="48" rx="8"/><text x="170" y="457">Amazon SQS</text><text x="170" y="474" class="d-sub">jobs routed by file size</text></g>
+            <line x1="170" y1="486" x2="170" y2="508" class="d-edge" marker-end="url(#vt-arr)"/>
+
+            <g class="d-group d-group-mine"><rect x="12" y="510" width="316" height="96" rx="12"/></g>
+            <text x="170" y="528" class="d-title" text-anchor="middle">FFmpeg transcoding</text>
+            <g class="d-node d-mine"><rect x="22" y="538" width="96" height="56" rx="7"/><text x="70" y="561">Lambda</text><text x="70" y="579" class="d-sub">smaller files</text></g>
+            <g class="d-node d-mine"><rect x="122" y="538" width="96" height="56" rx="7"/><text x="170" y="561">Lambda</text><text x="170" y="579" class="d-sub">larger files</text></g>
+            <g class="d-node d-mine"><rect x="222" y="538" width="96" height="56" rx="7"/><text x="270" y="561">ECS on EC2</text><text x="270" y="579" class="d-sub">very large</text></g>
+
+            <line x1="170" y1="608" x2="170" y2="632" class="d-edge" marker-end="url(#vt-arr)"/>
+            <g class="d-node"><rect x="20" y="634" width="300" height="48" rx="8"/><text x="170" y="655">Amazon S3</text><text x="170" y="672" class="d-sub">originals · renditions · one object per hash</text></g>
+            <line x1="170" y1="684" x2="170" y2="702" class="d-edge d-dashed" marker-start="url(#vt-arr)"/>
+            <text x="180" y="697" class="d-label" text-anchor="start">reads</text>
+            <g class="d-node d-mine d-proto"><rect x="20" y="704" width="300" height="46" rx="8"/><text x="170" y="724">Metadata Lambda</text><text x="170" y="740" class="d-sub">ExifTool prototype</text></g>
+          </svg>
+
+          <figcaption class="legend">
+            <span><i class="key key-mine" aria-hidden="true"></i>Designed or built by me</span>
+            <span><i class="key key-proto" aria-hidden="true"></i>Prototype</span>
+            <span><i class="key" aria-hidden="true"></i>Platform and AWS services</span>
+          </figcaption>
         </figure>
+        <p class="case-note">Client code is private.</p>
       </article>
 
-      <article class="project featured" aria-labelledby="p-ttt">
-        <div class="project-body">
-          <h3 id="p-ttt">LLM Tic-Tac-Toe Tournament</h3>
-          <p class="stack">TypeScript · Node.js · Express.js · WebSockets · Vercel AI SDK · Zod</p>
-          <dl class="facts">
+      <!-- LLM Tic-Tac-Toe -->
+      <article class="case case-split" aria-labelledby="p-ttt">
+        <div class="case-body">
+          <header class="case-head">
+            <p class="case-kicker">Personal · open source</p>
+            <h3 id="p-ttt">LLM Tic-Tac-Toe Tournament</h3>
+            <p class="case-stack">TypeScript · Node.js · Express.js · WebSockets · Vercel AI SDK · Zod</p>
+          </header>
+          <dl class="case-facts">
             <dt>Problem</dt>
             <dd>Compare how LLMs from different providers play a constrained game, live, without one misbehaving model breaking the run.</dd>
             <dt>Approach</dt>
             <dd>A knockout tournament engine pits OpenAI, Anthropic, Google, Groq and Mistral models against each other and streams every move to the browser over WebSockets.</dd>
             <dt>Key decisions</dt>
             <dd>
-              <ul class="bullets">
-                <li>Provider-agnostic LLM layer: every model returns a Zod-validated <code>{ row, col }</code> move through the AI SDK's structured output, so adding a provider is configuration, not new game logic.</li>
-                <li>Defensive game loop: illegal or malformed moves are retried up to 3 times, then the player forfeits; drawn games are replayed with sides swapped.</li>
+              <ul class="ticks">
+                <li><strong>One provider-agnostic layer.</strong> Every model returns a Zod-validated <code>{ row, col }</code> through the AI SDK's structured output, so adding a provider is configuration, not new game logic.</li>
+                <li><strong>A loop that can't be stalled.</strong> Illegal or malformed moves are retried up to 3 times before a forfeit, and drawn games are replayed with sides swapped.</li>
               </ul>
             </dd>
           </dl>
-          <p class="links"><a href="https://github.com/PewDieRes/GEN-AI-PROJECTS/tree/MIHIRS-AI-ASSISTANT/LLM-TIC-TAC-TOE" rel="noopener">Source on GitHub<span class="sr-only"> (LLM Tic-Tac-Toe Tournament)</span></a></p>
+          <p class="case-links"><a href="https://github.com/PewDieRes/GEN-AI-PROJECTS/tree/MIHIRS-AI-ASSISTANT/LLM-TIC-TAC-TOE" rel="noopener">Source on GitHub<span class="sr-only"> (LLM Tic-Tac-Toe Tournament)</span></a></p>
         </div>
-        <figure class="diagram">
-          <svg viewBox="0 0 320 432" role="img" aria-labelledby="d1-title d1-desc">
+        <figure class="case-diagram">
+          <svg class="dg" viewBox="0 0 320 432" role="img" aria-labelledby="d1-title d1-desc">
             <title id="d1-title">LLM Tic-Tac-Toe Tournament architecture</title>
             <desc id="d1-desc">The browser client talks to an Express and ws server over WebSocket. The server runs the tournament engine, which runs a game loop that validates moves, retries and forfeits. The game loop asks a provider layer built on the Vercel AI SDK for Zod-typed moves from OpenAI, Anthropic, Google, Groq and Mistral models.</desc>
             <defs>
@@ -198,9 +328,9 @@
             <text x="170" y="77" class="d-label" text-anchor="start">WebSocket · live events</text>
             <g class="d-node"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Express + ws server</text><text x="160" y="128" class="d-sub">starts tournaments, broadcasts updates</text></g>
             <line x1="160" y1="140" x2="160" y2="168" class="d-edge" marker-end="url(#arr1)"/>
-            <g class="d-node d-accent"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">Tournament engine</text><text x="160" y="208" class="d-sub">knockout bracket · byes · tie replays</text></g>
+            <g class="d-node d-mine"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">Tournament engine</text><text x="160" y="208" class="d-sub">knockout bracket · byes · tie replays</text></g>
             <line x1="160" y1="220" x2="160" y2="248" class="d-edge" marker-end="url(#arr1)"/>
-            <g class="d-node d-accent"><rect x="20" y="250" width="280" height="48" rx="8"/><text x="160" y="271">Game loop</text><text x="160" y="288" class="d-sub">validate move · 3 retries · forfeit</text></g>
+            <g class="d-node d-mine"><rect x="20" y="250" width="280" height="48" rx="8"/><text x="160" y="271">Game loop</text><text x="160" y="288" class="d-sub">validate move · 3 retries · forfeit</text></g>
             <line x1="160" y1="300" x2="160" y2="328" class="d-edge" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
             <text x="170" y="319" class="d-label" text-anchor="start">prompt ↓ · Zod move ↑</text>
             <g class="d-node"><rect x="20" y="330" width="280" height="48" rx="8"/><text x="160" y="351">Provider layer</text><text x="160" y="368" class="d-sub">Vercel AI SDK · generateObject</text></g>
@@ -216,26 +346,30 @@
         </figure>
       </article>
 
-      <article class="project featured" aria-labelledby="p-electro">
-        <div class="project-body">
-          <h3 id="p-electro">Electro: Multi-Tenant Utility Management Platform</h3>
-          <p class="stack">Node.js · Express.js · PostgreSQL · Sequelize · JWT</p>
-          <dl class="facts">
+      <!-- Electro -->
+      <article class="case case-split" aria-labelledby="p-electro">
+        <div class="case-body">
+          <header class="case-head">
+            <p class="case-kicker">Personal</p>
+            <h3 id="p-electro">Electro: Multi-Tenant Utility Management</h3>
+            <p class="case-stack">Node.js · Express.js · PostgreSQL · Sequelize · JWT</p>
+          </header>
+          <dl class="case-facts">
             <dt>Problem</dt>
             <dd>Administrative organizations need to manage billing, consumer profiles and usage telemetry on one platform without seeing each other's data.</dd>
             <dt>Approach</dt>
             <dd>A multi-tenant Express backend on a shared PostgreSQL database with tenant isolation, serving consumers, field agents and super-admins.</dd>
             <dt>Key decisions</dt>
             <dd>
-              <ul class="bullets">
-                <li>Granular RBAC on top of JWT authentication, so each of the three roles only reaches the actions it is allowed.</li>
-                <li>Transactional audit logs for admin changes and payment workflows, so every sensitive change leaves a consistent record.</li>
+              <ul class="ticks">
+                <li><strong>Granular RBAC on JWT.</strong> Each of the three roles only reaches the actions it is allowed.</li>
+                <li><strong>Transactional audit logs.</strong> Admin changes and payment workflows always leave a consistent record.</li>
               </ul>
             </dd>
           </dl>
         </div>
-        <figure class="diagram">
-          <svg viewBox="0 0 320 396" role="img" aria-labelledby="d2-title d2-desc">
+        <figure class="case-diagram">
+          <svg class="dg" viewBox="0 0 320 396" role="img" aria-labelledby="d2-title d2-desc">
             <title id="d2-title">Electro architecture</title>
             <desc id="d2-desc">Consumers, field agents and super-admins call an Express API with a JWT. Requests pass JWT authentication middleware and an RBAC layer, then domain services for billing, consumer profiles and telemetry. Services use Sequelize transactions against a shared, tenant-isolated PostgreSQL database and an audit log.</desc>
             <defs>
@@ -246,172 +380,159 @@
             <text x="170" y="77" class="d-label" text-anchor="start">HTTPS · Bearer JWT</text>
             <g class="d-node"><rect x="20" y="90" width="280" height="48" rx="8"/><text x="160" y="111">Express API</text><text x="160" y="128" class="d-sub">JWT authentication middleware</text></g>
             <line x1="160" y1="140" x2="160" y2="168" class="d-edge" marker-end="url(#arr2)"/>
-            <g class="d-node d-accent"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">RBAC layer</text><text x="160" y="208" class="d-sub">role → permitted actions</text></g>
+            <g class="d-node d-mine"><rect x="20" y="170" width="280" height="48" rx="8"/><text x="160" y="191">RBAC layer</text><text x="160" y="208" class="d-sub">role → permitted actions</text></g>
             <line x1="160" y1="220" x2="160" y2="248" class="d-edge" marker-end="url(#arr2)"/>
             <g class="d-node"><rect x="20" y="250" width="280" height="48" rx="8"/><text x="160" y="271">Domain services</text><text x="160" y="288" class="d-sub">billing · consumer profiles · telemetry</text></g>
             <line x1="90" y1="300" x2="90" y2="330" class="d-edge" marker-end="url(#arr2)"/>
             <line x1="230" y1="300" x2="230" y2="330" class="d-edge" marker-end="url(#arr2)"/>
             <text x="160" y="320" class="d-label" text-anchor="middle">Sequelize · transactions</text>
-            <g class="d-node d-accent"><rect x="20" y="332" width="136" height="56" rx="8"/><text x="88" y="355">PostgreSQL</text><text x="88" y="373" class="d-sub">shared, tenant-isolated</text></g>
+            <g class="d-node d-mine"><rect x="20" y="332" width="136" height="56" rx="8"/><text x="88" y="355">PostgreSQL</text><text x="88" y="373" class="d-sub">shared, tenant-isolated</text></g>
             <g class="d-node"><rect x="164" y="332" width="136" height="56" rx="8"/><text x="232" y="355">Audit log</text><text x="232" y="373" class="d-sub">admin + payments</text></g>
           </svg>
           <figcaption>Request path and data layer</figcaption>
         </figure>
       </article>
 
-      <div class="project-grid">
-        <article class="project" aria-labelledby="p-todo">
-          <h3 id="p-todo">Do It: To-Do App (NestJS + MongoDB + React)</h3>
-          <p class="stack">TypeScript · NestJS · MongoDB · Mongoose · React · Jest · Supertest</p>
-          <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Build a mobile-first task app with weekly planning from a Figma design and a written brief, as an SDE-1 take-home assignment.</dd>
-            <dt>Approach</dt>
-            <dd>Own REST API in NestJS on MongoDB, React + Vite client, deployed to Render and Netlify, with tests on both sides.</dd>
-            <dt>Key decisions</dt>
-            <dd>
-              <ul class="bullets">
-                <li>Controller → service → injected repository interface and clock, so business rules are unit-tested against a fake repository; e2e tests run on in-memory MongoDB.</li>
-                <li>No login: a guard requires an anonymous per-browser client ID and every query is scoped to it, isolating each reviewer's data.</li>
-              </ul>
-            </dd>
-          </dl>
-          <p class="links">
+      <!-- Smaller projects -->
+      <div class="minis">
+        <article class="mini" aria-labelledby="p-todo">
+          <p class="case-kicker">Take-home assignment · live</p>
+          <h3 id="p-todo">Do It: To-Do App</h3>
+          <p class="case-stack">NestJS · MongoDB · React · Jest · Supertest</p>
+          <p class="mini-lede">A mobile-first task app with weekly planning, built from a Figma design and a written brief for an SDE-1 assignment. My own NestJS API on MongoDB, React + Vite client, tests on both sides.</p>
+          <ul class="ticks">
+            <li>Controller → service → injected repository interface and clock, so business rules are unit-tested against a fake repository; e2e tests run on in-memory MongoDB.</li>
+            <li>No login: a guard requires an anonymous per-browser client ID and every query is scoped to it.</li>
+          </ul>
+          <p class="case-links">
             <a href="https://digiaccel-todo-mihir.netlify.app" rel="noopener">Live demo<span class="sr-only"> (Do It)</span></a>
             <a href="https://github.com/PewDieRes/digiaccel-todo" rel="noopener">Source<span class="sr-only"> (Do It)</span></a>
           </p>
         </article>
 
-        <article class="project" aria-labelledby="p-letittap">
-          <p class="kicker">In development</p>
+        <article class="mini" aria-labelledby="p-letittap">
+          <p class="case-kicker">In development</p>
           <h3 id="p-letittap">LetItTap: Android Phone Agent</h3>
-          <p class="stack">Kotlin · Android Accessibility Service · Claude API · Gemini API · LLM tool calling</p>
-          <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Everyday phone jobs, like filling a form, setting an alarm or messaging someone, take a dozen taps in the same few apps.</dd>
-            <dt>Approach</dt>
-            <dd>An Android app with a floating bubble: say or type a task, and an LLM agent operates the phone, opening apps, tapping and typing while you watch.</dd>
-            <dt>Key decisions</dt>
-            <dd>
-              <ul class="bullets">
-                <li>Screen as text, not screenshots: the accessibility tree becomes a numbered list of elements, and the model answers with one tool call per turn (tap, type, scroll, open app, done), capped at 20 steps.</li>
-                <li>Guardrails in the agent loop: it refuses to pay, delete or enter passwords, one tap on the bubble stops it, and there is no backend, so the phone talks to Claude or Gemini directly.</li>
-              </ul>
-            </dd>
-          </dl>
-          <p class="links"><a href="https://letittap.com/" rel="noopener">Website<span class="sr-only"> (LetItTap)</span></a></p>
+          <p class="case-stack">Kotlin · Accessibility Service · Claude API · Gemini API</p>
+          <p class="mini-lede">Tap a floating bubble, say or type a task, and an LLM agent operates the phone: it opens apps, taps and types while you watch.</p>
+          <ul class="ticks">
+            <li>The screen goes to the model as text, not screenshots: a numbered list of UI elements, answered with one tool call per turn and capped at 20 steps.</li>
+            <li>It refuses to pay, delete or enter passwords, one tap stops it, and there is no backend: the phone talks to Claude or Gemini directly.</li>
+          </ul>
+          <p class="case-links"><a href="https://letittap.com/" rel="noopener">Website<span class="sr-only"> (LetItTap)</span></a></p>
         </article>
 
-        <article class="project" aria-labelledby="p-mail">
+        <article class="mini" aria-labelledby="p-mail">
+          <p class="case-kicker">Personal · open source</p>
           <h3 id="p-mail">AI Email Classifier</h3>
-          <p class="stack">Python (scripting) · Laya decision model · Gmail API · OAuth 2.0 · Docker</p>
-          <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Sort a busy Gmail inbox automatically without sending email content to a third-party AI service.</dd>
-            <dt>Approach</dt>
-            <dd>A local tool that labels Gmail with Laya, an open-weight decision model running on-device. Classified 8,000+ emails into 12 categories such as Career, Finance, Security and Suspicious.</dd>
-            <dt>Key decisions</dt>
-            <dd>
-              <ul class="bullets">
-                <li>Deterministic SPF, DKIM and DMARC checks run before the model, so phishing detection does not depend on model confidence.</li>
-                <li>Low-confidence emails get an Unsure label instead of a guess, and the tool only adds labels: it never archives, deletes or sends mail.</li>
-              </ul>
-            </dd>
-          </dl>
-          <p class="links"><a href="https://github.com/PewDieRes/laya-mail-triage" rel="noopener">Source<span class="sr-only"> (AI Email Classifier)</span></a></p>
+          <p class="case-stack">Python (scripting) · Laya · Gmail API · OAuth 2.0 · Docker</p>
+          <p class="mini-lede">Labels Gmail automatically with Laya, an open-weight decision model running on-device, so email content never goes to a third-party AI service. Classified 8,000+ emails into 12 categories.</p>
+          <ul class="ticks">
+            <li>Deterministic SPF, DKIM and DMARC checks run before the model, so phishing detection doesn't depend on model confidence.</li>
+            <li>Low-confidence emails get an Unsure label instead of a guess, and the tool only adds labels: it never archives, deletes or sends.</li>
+          </ul>
+          <p class="case-links"><a href="https://github.com/PewDieRes/laya-mail-triage" rel="noopener">Source<span class="sr-only"> (AI Email Classifier)</span></a></p>
         </article>
 
-        <article class="project" aria-labelledby="p-hud">
+        <article class="mini" aria-labelledby="p-hud">
+          <p class="case-kicker">Personal · open source</p>
           <h3 id="p-hud">Usage HUD for Claude</h3>
-          <p class="stack">JavaScript · Chrome Extensions (Manifest V3) · Service Workers</p>
-          <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Claude's 5-hour and weekly usage limits are only visible deep in the settings page.</dd>
-            <dt>Approach</dt>
-            <dd>An open-source Chrome extension that shows both limits in the toolbar badge and a popup, from any tab.</dd>
-            <dt>Key decisions</dt>
-            <dd>
-              <ul class="bullets">
-                <li>A service worker refreshes on <code>chrome.alarms</code> and caches in <code>chrome.storage</code>, so the popup opens instantly.</li>
-                <li>Least-privilege permissions: storage, alarms and the claude.ai host only, with no content script.</li>
-              </ul>
-            </dd>
-          </dl>
-          <p class="links"><a href="https://github.com/PewDieRes/usage-hud-for-claude" rel="noopener">Source<span class="sr-only"> (Usage HUD for Claude)</span></a></p>
+          <p class="case-stack">JavaScript · Chrome Extensions (MV3) · Service Workers</p>
+          <p class="mini-lede">A Chrome extension that shows Claude's 5-hour and weekly usage limits in the toolbar badge and a popup, from any tab.</p>
+          <ul class="ticks">
+            <li>A service worker refreshes on <code>chrome.alarms</code> and caches in <code>chrome.storage</code>, so the popup opens instantly.</li>
+            <li>Least-privilege permissions: storage, alarms and the claude.ai host only, with no content script.</li>
+          </ul>
+          <p class="case-links"><a href="https://github.com/PewDieRes/usage-hud-for-claude" rel="noopener">Source<span class="sr-only"> (Usage HUD for Claude)</span></a></p>
         </article>
       </div>
     </section>
 
-    <section class="wrap section" id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
+    <!-- Skills -->
+    <section class="shell block" id="skills" aria-labelledby="skills-title">
+      <header class="block-head">
+        <h2 id="skills-title">Skills</h2>
+        <p class="block-meta">from my resume</p>
+      </header>
       <div class="skills">
-        <div>
+        <div class="skill-group">
           <h3>Backend</h3>
-          <ul class="tags">
-            <li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>TypeORM</li><li>Sequelize</li>
-            <li>REST API design</li><li>Multi-tenant architecture</li><li>JWT · OAuth 2.0</li><li>RBAC · ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS · PDFKit</li>
+          <ul class="inline-list">
+            <li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>NestJS</li><li>Express.js</li><li>TypeORM</li><li>Sequelize</li><li>REST API design</li><li>Multi-tenant architecture</li><li>JWT and OAuth 2.0</li><li>RBAC and ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS</li><li>PDFKit</li>
           </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h3>Databases</h3>
-          <ul class="tags">
+          <ul class="inline-list">
             <li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li><li>SQL</li><li>Schema design</li><li>Indexing</li><li>Query optimization</li><li>Transactions</li>
           </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h3>Cloud / DevOps</h3>
-          <ul class="tags">
+          <ul class="inline-list">
             <li>AWS Lambda</li><li>Amazon ECS (EC2)</li><li>Amazon S3</li><li>Amazon SQS</li><li>Amazon EC2</li><li>Amazon RDS</li>
           </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h3>Tools</h3>
-          <ul class="tags">
-            <li>Git · GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs (OpenAI, Anthropic, Gemini, Groq, Mistral)</li><li>Chrome Extensions (MV3)</li><li>Python (scripting)</li>
+          <ul class="inline-list">
+            <li>Git and GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs: OpenAI, Anthropic, Gemini, Groq, Mistral</li><li>Chrome Extensions (MV3)</li><li>Python (scripting)</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="wrap section" id="education" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <ul class="edu">
-        <li>
-          <div>
+    <!-- Education -->
+    <section class="shell block" id="education" aria-labelledby="education-title">
+      <header class="block-head">
+        <h2 id="education-title">Education</h2>
+      </header>
+      <div class="edu">
+        <article class="job">
+          <div class="job-when"><p>2022 – 2025</p><p>Pune, India</p></div>
+          <div class="job-what">
             <h3>B.E. Computer Engineering</h3>
-            <p>JSPM Narhe Technical Campus (SPPU) · CGPA 8.4</p>
+            <p class="job-note">JSPM Narhe Technical Campus (SPPU) · CGPA 8.4</p>
           </div>
-          <p class="meta">2022 – 2025</p>
-        </li>
-        <li>
-          <div>
+        </article>
+        <article class="job">
+          <div class="job-when"><p>2019 – 2022</p><p>Malvan, India</p></div>
+          <div class="job-what">
             <h3>Diploma in Computer Engineering</h3>
-            <p>Government Polytechnic Malvan · 91%</p>
+            <p class="job-note">Government Polytechnic Malvan · 91%</p>
           </div>
-          <p class="meta">2019 – 2022</p>
-        </li>
-      </ul>
-      <h3 class="minor">Certifications and achievements</h3>
-      <ul class="bullets">
-        <li>Namaste Dev Node.js: advanced certification covering the event loop, libuv, asynchronous architecture and streams.</li>
-        <li>Smart India Hackathon (SIH): Team Leader.</li>
-      </ul>
+        </article>
+        <article class="job">
+          <div class="job-when"><p>Certifications</p></div>
+          <div class="job-what">
+            <ul class="ticks">
+              <li>Namaste Dev Node.js: advanced certification covering the event loop, libuv, asynchronous architecture and streams.</li>
+              <li>Smart India Hackathon (SIH): Team Leader.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p>Hiring for a Node.js or TypeScript backend role? Email is the fastest way to reach me.</p>
-      <ul class="contact-list">
-        <li><span>Email</span><a href="mailto:vazemihir2001@gmail.com">vazemihir2001@gmail.com</a>
-          <button class="copy" type="button" data-copy="vazemihir2001@gmail.com" hidden>Copy</button></li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">linkedin.com/in/mihir-vaze-a805a225b</a></li>
-        <li><span>GitHub</span><a href="https://github.com/PewDieRes" rel="me noopener">github.com/PewDieRes</a></li>
+    <!-- Contact -->
+    <section class="shell contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Hiring for a Node.js or TypeScript backend role?</h2>
+      <p class="contact-lede">Email is the fastest way to reach me.</p>
+      <p class="contact-mail">
+        <a href="mailto:vazemihir2001@gmail.com">vazemihir2001@gmail.com</a>
+        <button class="copy" type="button" data-copy="vazemihir2001@gmail.com" hidden>Copy email</button>
+      </p>
+      <ul class="contact-links">
+        <li><a href="https://www.linkedin.com/in/mihir-vaze-a805a225b/" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/PewDieRes" rel="me noopener">GitHub</a></li>
+        <li><a href="resume.pdf" download="Mihir_Vaze_Resume.pdf">Resume (PDF)</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="wrap footer">
-    <p>© <span id="year">2026</span> Mihir Vaze · Plain HTML and CSS, hosted on GitHub Pages.</p>
+  <footer class="shell footer">
+    <p>© <span id="year">2026</span> Mihir Vaze</p>
+    <p>Plain HTML and CSS, no tracking. <a href="https://github.com/PewDieRes/PewDieRes.github.io" rel="noopener">Source</a></p>
   </footer>
 
   <script src="script.js" defer></script>
