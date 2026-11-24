@@ -400,3 +400,4 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Odd number of small project cards: last one spans the row */
 .minis .mini:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.facts-note { display: block; font-weight: 400; font-size: 0.8125rem; color: var(--graphite); }
