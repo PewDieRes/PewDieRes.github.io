@@ -132,9 +132,10 @@
           <h3>Software Engineer <span>Coditas LLP</span></h3>
           <p class="job-promo"><span aria-hidden="true">↑</span> Promoted from Associate Software Engineer, Oct 2026</p>
           <ul class="ticks">
-            <li>Built a generic FFmpeg transcoding service for The Vault that handles video, images and arbitrary FFmpeg arguments through one pipeline. It now processes <strong>essentially every file ingested</strong> into the platform.</li>
-            <li>Designed the job routing on AWS: SQS sends each job to a differently sized Lambda function based on file size, and files that would exceed Lambda's maximum runtime fall back to ECS on EC2.</li>
-            <li>Own end-to-end delivery of core NestJS and TypeScript backend modules, from requirements and database design to API build, testing and deployment.</li>
+            <li>Designed and built a generic FFmpeg transcoding service for The Vault (video, images, arbitrary FFmpeg arguments). It now processes essentially every file ingested: <strong>~150–240k files (~15 TB) a year</strong>.</li>
+            <li>Architected size-based routing over 3 SQS queues plus a dead-letter queue: right-sized Lambda functions handle <strong>~98% of files</strong>, and files up to <strong>41.7 GB</strong> run as ECS tasks on EC2.</li>
+            <li>Own core NestJS modules and the PDF generation service end to end: PDFKit mockups of ads on stadium placements, batch run-sheet PDFs as Lambda jobs, and ExcelJS exports.</li>
+            <li>Led the transcoding design and proof of concept, handing it to two teammates who extended it into production; review pull requests and join design discussions with frontend and product teams.</li>
           </ul>
           <p class="job-link">Main client project: <a href="#p-vault">The Vault, a multi-tenant digital asset platform</a> (FFmpeg pipeline, ~12 TB of duplicates removed)</p>
         </div>
@@ -177,7 +178,7 @@
     <section class="shell block" id="projects" aria-labelledby="projects-title">
       <header class="block-head">
         <h2 id="projects-title">Projects</h2>
-        <p class="block-meta">7 projects · client, internship and personal</p>
+        <p class="block-meta">8 projects · client, internship and personal</p>
       </header>
 
       <!-- The Vault -->
@@ -185,22 +186,22 @@
         <header class="case-head">
           <p class="case-kicker">Client project at Coditas · in production</p>
           <h3 id="p-vault-title">The Vault by TGI Sport</h3>
-          <p class="case-sub">Multi-tenant digital asset platform</p>
+          <p class="case-sub">Multi-tenant digital asset platform for 40 sports rights-holders</p>
           <p class="case-stack">TypeScript · NestJS · PostgreSQL (RDS) · TypeORM · Redis · FFmpeg · S3 · SQS · Lambda · ECS · ExcelJS · PDFKit</p>
         </header>
 
         <div class="case-cols">
           <dl class="case-facts">
             <dt>Problem</dt>
-            <dd>Sports media and advertising teams across multiple leagues share one platform for their media. Every ingested file, from small images to very large videos, has to be processed while each tenant stays strictly isolated.</dd>
+            <dd>40 sports rights-holders, including UEFA, FIFA, NBA and MLB, share one platform for their media: about 150–240k files (~15 TB) a year, from small images to videos up to 41.7 GB. Every file has to be processed while each tenant stays isolated in its own PostgreSQL schema.</dd>
             <dt>Approach</dt>
-            <dd>I built backend features across the platform: tenant-level access control, REST APIs for bulk multipart uploads and async file processing, a generic FFmpeg transcoding service, and Excel and PDF features on Lambda.</dd>
+            <dd>I built backend features across the platform: tenant-level access control, REST APIs for bulk multipart uploads and async file processing, a generic FFmpeg transcoding service (I designed it and built the first version; two teammates later extended it), and Excel and PDF features on Lambda.</dd>
           </dl>
           <dl class="case-facts">
             <dt>Key decisions</dt>
             <dd>
               <ul class="ticks">
-                <li><strong>Route by file size.</strong> SQS jobs go to Lambda functions with different memory and timeout sizes, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
+                <li><strong>Route by file size.</strong> Three size-tiered SQS queues (under 1 GB, 1–5 GB, over 5 GB) plus a dead-letter queue: right-sized Lambda functions handle ~98% of files, and files that would exceed Lambda's maximum runtime run as ECS tasks on EC2.</li>
                 <li><strong>Deduplicate by content hash.</strong> A duplicate upload points at the original S3 object through an <code>originalFileId</code> but still behaves as its own file in the app.</li>
               </ul>
             </dd>
@@ -208,7 +209,7 @@
             <dd>
               <ul class="ticks">
                 <li>A backfill job removed ~12 TB of duplicate data, 20% of 60 TB across all tenants.</li>
-                <li>The transcoding service now processes essentially every file ingested into the platform.</li>
+                <li>The transcoding service now processes essentially every file ingested: ~150–240k files (~15 TB) a year.</li>
                 <li>An in-house ExifTool prototype matched a third-party metadata SaaS on critical fields across 8 media formats, up to 76× faster.</li>
               </ul>
             </dd>
@@ -218,12 +219,12 @@
         <figure class="system">
           <svg class="system-wide dg" viewBox="0 0 960 384" role="img" aria-labelledby="vw-title vw-desc">
             <title id="vw-title">The Vault system architecture</title>
-            <desc id="vw-desc">Tenant teams call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features. It uses Redis as an ACL and RBAC cache and PostgreSQL on RDS through TypeORM. Uploads go to Amazon S3. Processing jobs go to Amazon SQS and are routed by file size to the FFmpeg transcoding service: a Lambda for smaller files, a Lambda for larger files, or an ECS task on EC2 for very large files. Workers write to S3. A metadata extraction Lambda, prototyped with ExifTool, reads files from S3.</desc>
+            <desc id="vw-desc">40 sports rights-holder tenants call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features. It uses Redis as an ACL and RBAC cache and PostgreSQL on RDS through TypeORM. Uploads go to Amazon S3. Processing jobs go to Amazon SQS and are routed by file size across three queues plus a dead-letter queue to the FFmpeg transcoding service: a Lambda for files under 1 GB, a Lambda for 1–5 GB, or an ECS task on EC2 for files over 5 GB. Workers write to S3. A metadata extraction Lambda, prototyped with ExifTool, reads files from S3.</desc>
             <defs>
               <marker id="vw-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
             </defs>
 
-            <g class="d-node"><rect x="8" y="150" width="128" height="84" rx="8"/><text x="72" y="182">Tenant teams</text><text x="72" y="200" class="d-sub">media &amp; ad teams</text><text x="72" y="216" class="d-sub">multiple leagues</text></g>
+            <g class="d-node"><rect x="8" y="150" width="128" height="84" rx="8"/><text x="72" y="182">40 tenants</text><text x="72" y="200" class="d-sub">UEFA · FIFA · NBA</text><text x="72" y="216" class="d-sub">MLB and more</text></g>
             <line x1="138" y1="192" x2="178" y2="192" class="d-edge" marker-end="url(#vw-arr)"/>
             <text x="158" y="184" class="d-label" text-anchor="middle">HTTPS</text>
 
@@ -245,16 +246,16 @@
 
             <line x1="446" y1="207" x2="508" y2="207" class="d-edge" marker-end="url(#vw-arr)"/>
             <text x="478" y="199" class="d-label" text-anchor="middle">jobs</text>
-            <g class="d-node d-mine"><rect x="510" y="150" width="114" height="80" rx="8"/><text x="567" y="180">Amazon SQS</text><text x="567" y="198" class="d-sub">routed by</text><text x="567" y="213" class="d-sub">file size</text></g>
+            <g class="d-node d-mine"><rect x="510" y="150" width="114" height="80" rx="8"/><text x="567" y="180">Amazon SQS</text><text x="567" y="198" class="d-sub">3 size tiers</text><text x="567" y="213" class="d-sub">+ dead-letter</text></g>
 
             <g class="d-group d-group-mine"><rect x="652" y="38" width="172" height="212" rx="12"/></g>
             <text x="738" y="58" class="d-title" text-anchor="middle">FFmpeg transcoding</text>
             <line x1="626" y1="184" x2="666" y2="96" class="d-edge" marker-end="url(#vw-arr)"/>
             <line x1="626" y1="190" x2="666" y2="154" class="d-edge" marker-end="url(#vw-arr)"/>
             <line x1="626" y1="198" x2="666" y2="212" class="d-edge" marker-end="url(#vw-arr)"/>
-            <g class="d-node d-mine"><rect x="668" y="70" width="140" height="48" rx="7"/><text x="738" y="90">Lambda</text><text x="738" y="107" class="d-sub">smaller files</text></g>
-            <g class="d-node d-mine"><rect x="668" y="128" width="140" height="48" rx="7"/><text x="738" y="148">Lambda</text><text x="738" y="165" class="d-sub">larger files</text></g>
-            <g class="d-node d-mine"><rect x="668" y="186" width="140" height="48" rx="7"/><text x="738" y="206">ECS task on EC2</text><text x="738" y="223" class="d-sub">beyond Lambda limits</text></g>
+            <g class="d-node d-mine"><rect x="668" y="70" width="140" height="48" rx="7"/><text x="738" y="90">Lambda</text><text x="738" y="107" class="d-sub">under 1 GB</text></g>
+            <g class="d-node d-mine"><rect x="668" y="128" width="140" height="48" rx="7"/><text x="738" y="148">Lambda</text><text x="738" y="165" class="d-sub">1–5 GB</text></g>
+            <g class="d-node d-mine"><rect x="668" y="186" width="140" height="48" rx="7"/><text x="738" y="206">ECS task on EC2</text><text x="738" y="223" class="d-sub">5–41.7 GB</text></g>
 
             <line x1="810" y1="94" x2="848" y2="94" class="d-edge" marker-end="url(#vw-arr)"/>
             <line x1="810" y1="152" x2="848" y2="152" class="d-edge" marker-end="url(#vw-arr)"/>
@@ -269,11 +270,11 @@
 
           <svg class="system-tall dg" viewBox="0 0 340 756" role="img" aria-labelledby="vt-title vt-desc">
             <title id="vt-title">The Vault system architecture</title>
-            <desc id="vt-desc">Tenant teams call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features, backed by Redis as an ACL and RBAC cache and PostgreSQL on RDS. Jobs go to Amazon SQS and are routed by file size to the FFmpeg transcoding service: Lambda for smaller files, Lambda for larger files, or ECS on EC2 for very large files. Outputs land in Amazon S3, which a metadata extraction Lambda prototyped with ExifTool reads from.</desc>
+            <desc id="vt-desc">40 sports rights-holder tenants call a NestJS API over HTTPS. The API handles tenant isolation and access control, upload APIs with multipart uploads and content-hash deduplication, async processing APIs, and Excel and PDF features, backed by Redis as an ACL and RBAC cache and PostgreSQL on RDS. Jobs go to Amazon SQS and are routed by file size across three queues plus a dead-letter queue to the FFmpeg transcoding service: Lambda under 1 GB, Lambda for 1–5 GB, or ECS on EC2 over 5 GB. Outputs land in Amazon S3, which a metadata extraction Lambda prototyped with ExifTool reads from.</desc>
             <defs>
               <marker id="vt-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="d-head"/></marker>
             </defs>
-            <g class="d-node"><rect x="20" y="8" width="300" height="48" rx="8"/><text x="170" y="29">Tenant teams</text><text x="170" y="46" class="d-sub">media &amp; ad teams · multiple leagues</text></g>
+            <g class="d-node"><rect x="20" y="8" width="300" height="48" rx="8"/><text x="170" y="29">40 tenants</text><text x="170" y="46" class="d-sub">UEFA · FIFA · NBA · MLB and more</text></g>
             <line x1="170" y1="58" x2="170" y2="84" class="d-edge" marker-end="url(#vt-arr)"/>
             <text x="180" y="75" class="d-label" text-anchor="start">HTTPS</text>
 
@@ -291,14 +292,14 @@
             <g class="d-node"><rect x="190" y="358" width="130" height="52" rx="8"/><text x="255" y="380">PostgreSQL</text><text x="255" y="397" class="d-sub">RDS · TypeORM</text></g>
 
             <line x1="170" y1="334" x2="170" y2="434" class="d-edge" marker-end="url(#vt-arr)"/>
-            <g class="d-node d-mine"><rect x="20" y="436" width="300" height="48" rx="8"/><text x="170" y="457">Amazon SQS</text><text x="170" y="474" class="d-sub">jobs routed by file size</text></g>
+            <g class="d-node d-mine"><rect x="20" y="436" width="300" height="48" rx="8"/><text x="170" y="457">Amazon SQS</text><text x="170" y="474" class="d-sub">3 size tiers + dead-letter queue</text></g>
             <line x1="170" y1="486" x2="170" y2="508" class="d-edge" marker-end="url(#vt-arr)"/>
 
             <g class="d-group d-group-mine"><rect x="12" y="510" width="316" height="96" rx="12"/></g>
             <text x="170" y="528" class="d-title" text-anchor="middle">FFmpeg transcoding</text>
-            <g class="d-node d-mine"><rect x="22" y="538" width="96" height="56" rx="7"/><text x="70" y="561">Lambda</text><text x="70" y="579" class="d-sub">smaller files</text></g>
-            <g class="d-node d-mine"><rect x="122" y="538" width="96" height="56" rx="7"/><text x="170" y="561">Lambda</text><text x="170" y="579" class="d-sub">larger files</text></g>
-            <g class="d-node d-mine"><rect x="222" y="538" width="96" height="56" rx="7"/><text x="270" y="561">ECS on EC2</text><text x="270" y="579" class="d-sub">very large</text></g>
+            <g class="d-node d-mine"><rect x="22" y="538" width="96" height="56" rx="7"/><text x="70" y="561">Lambda</text><text x="70" y="579" class="d-sub">under 1 GB</text></g>
+            <g class="d-node d-mine"><rect x="122" y="538" width="96" height="56" rx="7"/><text x="170" y="561">Lambda</text><text x="170" y="579" class="d-sub">1–5 GB</text></g>
+            <g class="d-node d-mine"><rect x="222" y="538" width="96" height="56" rx="7"/><text x="270" y="561">ECS on EC2</text><text x="270" y="579" class="d-sub">over 5 GB</text></g>
 
             <line x1="170" y1="608" x2="170" y2="632" class="d-edge" marker-end="url(#vt-arr)"/>
             <g class="d-node"><rect x="20" y="634" width="300" height="48" rx="8"/><text x="170" y="655">Amazon S3</text><text x="170" y="672" class="d-sub">originals · renditions · one object per hash</text></g>
@@ -436,6 +437,18 @@
           </p>
         </article>
 
+        <article class="mini" aria-labelledby="p-air">
+          <p class="case-kicker">PromptWars hackathon · open source</p>
+          <h3 id="p-air">Urban Air Quality Assistant</h3>
+          <p class="case-stack">Next.js 14 · React · TypeScript · Gemini · Docker · GitHub Actions</p>
+          <p class="mini-lede">A full-stack app that helps families plan around smog: live and 24-hour air-quality forecasts, a regional map, and a household plan written by Gemini.</p>
+          <ul class="ticks">
+            <li>Gemini's output is schema-validated with fact-ID checks, so the plan can't invent hours or measurements.</li>
+            <li>GitHub Actions CI runs typecheck, lint, Vitest unit tests and Playwright end-to-end tests.</li>
+          </ul>
+          <p class="case-links"><a href="https://github.com/PewDieRes/urban-air-quality-assistant" target="_blank" rel="noopener">Source<span class="sr-only"> (Urban Air Quality Assistant)</span></a></p>
+        </article>
+
         <article class="mini" aria-labelledby="p-letittap">
           <p class="case-kicker">In development</p>
           <h3 id="p-letittap">LetItTap: Android Phone Agent</h3>
@@ -484,7 +497,7 @@
         <div class="skill-group">
           <h3>Backend</h3>
           <ul class="inline-list">
-            <li class="core">TypeScript</li><li class="core">Node.js</li><li class="core">NestJS</li><li class="core">Express.js</li><li>JavaScript</li><li>TypeORM</li><li>Sequelize</li><li>REST API design</li><li>Multi-tenant architecture</li><li>JWT and OAuth 2.0</li><li>RBAC and ACL</li><li>Async job processing</li><li>WebSockets</li><li>FFmpeg</li><li>ExcelJS</li><li>PDFKit</li>
+            <li class="core">TypeScript</li><li class="core">Node.js</li><li class="core">NestJS</li><li class="core">Express.js</li><li class="core">REST APIs</li><li class="core">Microservices</li><li class="core">Multi-tenant architecture</li><li class="core">FFmpeg</li><li>JavaScript</li><li>TypeORM</li><li>Sequelize</li><li>JWT and OAuth 2.0</li><li>RBAC and ACL</li><li>Async job processing</li><li>WebSockets</li><li>ExcelJS</li><li>PDFKit</li>
           </ul>
         </div>
         <div class="skill-group">
@@ -496,13 +509,13 @@
         <div class="skill-group">
           <h3>Cloud / DevOps</h3>
           <ul class="inline-list">
-            <li class="core">AWS Lambda</li><li class="core">Amazon ECS (EC2)</li><li class="core">Amazon S3</li><li class="core">Amazon SQS</li><li>Amazon EC2</li><li>Amazon RDS</li>
+            <li class="core">AWS Lambda</li><li class="core">Amazon ECS (EC2)</li><li class="core">Amazon S3</li><li class="core">Amazon SQS</li><li class="core">Docker</li><li class="core">GitHub Actions (CI/CD)</li><li>Amazon EC2</li><li>Amazon RDS</li>
           </ul>
         </div>
         <div class="skill-group">
-          <h3>Tools</h3>
+          <h3>Frontend, testing and tools</h3>
           <ul class="inline-list">
-            <li>Git and GitHub</li><li>Jest</li><li>Postman</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs: OpenAI, Anthropic, Gemini, Groq, Mistral</li><li>Chrome Extensions (MV3)</li><li>AI-assisted development: Claude Code, OpenAI Codex</li><li>Python (scripting)</li>
+            <li class="core">React</li><li class="core">Next.js</li><li>Tailwind CSS</li><li>Jest</li><li>Vitest</li><li>Playwright</li><li>Postman</li><li>Git and GitHub</li><li>Agile/Scrum</li><li>Vercel AI SDK</li><li>Zod</li><li>LLM APIs: OpenAI, Anthropic, Gemini, Groq, Mistral</li><li>Chrome Extensions (MV3)</li><li>AI-assisted development: Claude Code, OpenAI Codex</li><li>Python (scripting)</li>
           </ul>
         </div>
       </div>

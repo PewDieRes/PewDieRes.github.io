@@ -397,3 +397,6 @@ a:hover { text-decoration-thickness: 2px; }
 
 @media (max-width: 560px) { .facts-row dd { font-size: 0.9375rem; } }
 .job-what > .ticks:first-child { margin-top: 0; }
+
+/* Odd number of small project cards: last one spans the row */
+.minis .mini:last-child:nth-child(odd) { grid-column: 1 / -1; }
